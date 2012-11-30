@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.selfService.bean.AlipayOrder" table="alipay_order">
+        <id name="orderId" type="java.lang.Integer" column="order_id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="orderCode" type="string" column="order_code" length="50"></property>
+        <property name="userCode" type="string" column="user_code" length="50"></property>
+        <property name="payNum" type="java.lang.Integer" column="pay_num"></property>
+        <property name="payMoney" type="java.lang.Integer" column="pay_money"></property>
+        <property name="orderDate" type="java.util.Date" column="order_date"></property>
+        <property name="payDate" type="java.util.Date" column="pay_date"></property>
+        <property name="tradeNo" type="string" column="trade_no" length="100"></property>
+        <property name="status" type="java.lang.Integer" column="status"></property>
+    </class>
+</hibernate-mapping>

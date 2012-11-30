@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.selfService.bean.ActivityInfo" table="activity_info">
+        <id name="id" type="java.lang.Integer" column="id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="userCode" type="string" column="user_code" length="50"></property>
+        <property name="number" type="string" column="number" length="10"></property>
+        <property name="title" type="string" column="title" length="1000"></property>
+        <property name="planners" type="string" column="planners" length="50"></property>
+        <property name="plannersTel" type="string" column="planners_tel" length="50"></property>
+        <property name="site" type="string" column="site" length="50"></property>
+        <property name="siteTel" type="string" column="site_tel" length="50"></property>
+        <property name="bridegroom" type="string" column="bridegroom" length="50"></property>
+        <property name="bridegroomTel" type="string" column="bridegroom_tel" length="50"></property>
+        <property name="bride" type="string" column="bride" length="50"></property>
+        <property name="brideTel" type="string" column="bride_tel" length="50"></property>
+        <property name="address" type="string" column="address" length="1000"></property>
+        <property name="welcomeMsg" type="string" column="welcome_msg" length="70"></property>
+        <property name="postAddress" type="string" column="post_address" length="1000"></property>
+        <property name="remark" type="string" column="remark" length="4000"></property>
+        <property name="picId" type="java.lang.Integer" column="pic_id"></property>
+        <property name="picFileName" type="string" column="pic_file_name" length="220"></property>
+        <property name="bgPicPath" type="string" column="bg_pic_path" length="1000"></property>
+        <property name="stencilId" type="java.lang.Integer" column="stencil_id"></property>
+        <property name="stencilName" type="string" column="stencil_name" length="400"></property>
+        <property name="holdDate" type="string" column="hold_date" length="10"></property>
+        <property name="period" type="string" column="period" length="10"></property>
+        <property name="port" type="string" column="port" length="20"></property>
+        <property name="sysTel" type="string" column="sys_tel" length="20"></property>
+        <property name="status" type="string" column="status" length="10"></property>
+        <property name="flag" type="string" column="flag" length="10"></property>
+    </class>
+</hibernate-mapping>

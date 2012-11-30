@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.sms.bean.NamePoint" table="name_point">
+        <id name="id" type="java.lang.Integer" column="id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="telNumber" type="string" column="tel_number" length="50"></property>
+        <property name="name" type="string" column="name" length="70"></property>
+    </class>
+</hibernate-mapping>

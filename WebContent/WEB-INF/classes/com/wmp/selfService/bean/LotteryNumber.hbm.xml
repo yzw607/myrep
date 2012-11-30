@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.selfService.bean.LotteryNumber" table="lottery_number">
+        <id name="numId" type="java.lang.Integer" column="num_id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="showIndex" type="java.lang.Integer" column="show_index"></property>
+        <property name="showNumber" type="string" column="show_number" length="20"></property>
+        <property name="activityId" type="string" column="activity_id" length="10"></property>
+        <property name="userCode" type="string" column="user_code" length="50"></property>
+    </class>
+</hibernate-mapping>

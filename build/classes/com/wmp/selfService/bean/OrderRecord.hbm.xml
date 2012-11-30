@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.selfService.bean.OrderRecord" table="order_record">
+        <id name="recordId" type="java.lang.Integer" column="record_id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="userCode" type="string" column="user_code" length="100"></property>
+        <property name="orderType" type="string" column="order_type" length="10"></property>
+        <property name="orderNum" type="java.lang.Integer" column="order_num"></property>
+        <property name="costNumber" type="string" column="cost_number" length="10"></property>
+        <property name="orderDate" type="java.util.Date" column="order_date"></property>
+        <property name="originalNum" type="java.lang.Integer" column="original_num"></property>
+        <property name="lastNum" type="java.lang.Integer" column="last_num"></property>
+        <property name="activityId" type="java.lang.Integer" column="activity_id"></property>
+        <property name="title" type="string" column="title" length="100"></property>
+        <property name="parentCode" type="string" column="parent_code" length="254"></property>
+    </class>
+</hibernate-mapping>

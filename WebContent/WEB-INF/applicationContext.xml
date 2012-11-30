@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+
+ 	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url" value="jdbc:mysql://localhost:3306/wmp">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+		<property name="maxActive" value="100"></property>
+		<property name="maxIdle" value="30"></property>
+		<property name="maxWait" value="500"></property>
+		<property name="defaultAutoCommit" value="true"></property>
+		
+		<property name="testOnBorrow" value="true"></property>
+        <property name="testOnReturn" value="true"></property>
+        <property name="testWhileIdle" value="true"></property>
+        <property name="validationQuery" value="SELECT 1"></property>
+        <property name="timeBetweenEvictionRunsMillis" value="1800000"></property>
+        <property name="minEvictableIdleTimeMillis" value="1800000"></property>
+
+	</bean>  
+		<!-- database.properties -->
+ <!-- 	<bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:database.properties</value>
+			</list> 
+		</property>
+	</bean> 
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${dataSource.driverClassName}" />
+		<property name="url" value="${dataSource.url}" />
+		<property name="username" value="${dataSource.username}" />
+		<property name="password" value="${dataSource.password}" />
+	</bean>  -->
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect 
+					<!-- org.hibernate.dialect.HSQLDialect -->
+				</prop>
+				<!-- 显示SQL语句 -->
+				<prop key="hibernate.show_sql">true</prop>
+			<!-- 	<prop key="hibernate.hbm2ddl.auto">create</prop> -->
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/wmp/userManage/bean/User.hbm.xml</value>
+				<value>com/wmp/selfService/bean/OrderRecord.hbm.xml</value>
+				<value>com/wmp/selfService/bean/UserNumber.hbm.xml</value>
+				<value>com/wmp/selfService/bean/ActivityInfo.hbm.xml</value>
+				<value>com/wmp/selfService/bean/AlipayOrder.hbm.xml</value>
+				<value>com/wmp/selfService/bean/Card.hbm.xml</value>
+				<value>com/wmp/selfService/bean/Question.hbm.xml</value>
+				<value>com/wmp/selfService/bean/Stencil.hbm.xml</value>
+				<value>com/wmp/selfService/bean/LotteryNumber.hbm.xml</value>
+				<value>com/wmp/sms/bean/MsgInBox.hbm.xml</value>
+				<value>com/wmp/sms/bean/NamePoint.hbm.xml</value>
+				<value>com/wmp/common/bean/SysTelNumber.hbm.xml</value>
+				<value>com/wmp/common/bean/UploadPic.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 定义事务管理器（声明式的事务） -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref local="sessionFactory" />
+		</property>
+	</bean>
+
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+		</property>
+		<!-- 配置事务属性 -->
+		<property name="transactionAttributes">
+			<props>
+				<prop key="del*">PROPAGATION_REQUIRED</prop>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="do*">PROPAGATION_REQUIRED</prop>
+				<prop key="get*">PROPAGATION_REQUIRED</prop>
+				<prop key="set*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="find*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 自动代理 -->
+	<bean id="autoproxy"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<!-- 可以是Service或DAO层（最好是针对业务层*Service） -->
+		<property name="beanNames">
+			<list>
+				<value>*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 系统登录  -->
+	<bean id="loginService"
+		class="com.wmp.common.service.impl.LoginServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="loginAction" class="com.wmp.common.action.LoginAction"
+		scope="prototype">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
+
+	<bean id="infoService"
+		class="com.wmp.selfService.service.impl.InfoServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="infoAction" class="com.wmp.selfService.action.InfoAction"
+		scope="prototype">
+		<property name="infoService" ref="infoService"></property>
+	</bean>
+
+	<!-- 用户注册  -->
+	<bean id="registerService"
+		class="com.wmp.common.service.impl.RegisterServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="registerAction"
+		class="com.wmp.common.action.RegisterAction" scope="prototype">
+		<property name="registerService" ref="registerService"></property>
+	</bean>
+
+	<!-- 用户注册  -->
+	<bean id="rechargeService"
+		class="com.wmp.selfService.service.impl.RechargeServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="rechargeAction"
+		class="com.wmp.selfService.action.RechargeAction" scope="prototype">
+		<property name="rechargeService" ref="rechargeService"></property>
+	</bean>
+
+	<!-- 特殊号码设置  -->
+	<bean id="numberService"
+		class="com.wmp.selfService.service.impl.NumberServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="numberAction"
+		class="com.wmp.selfService.action.NumberAction" scope="prototype">
+		<property name="numberService" ref="numberService"></property>
+	</bean>
+
+	<!-- 活动策划  -->
+	<bean id="planService"
+		class="com.wmp.selfService.service.impl.PlanServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="planAction" class="com.wmp.selfService.action.PlanAction"
+		scope="prototype">
+		<property name="planService" ref="planService"></property>
+	</bean>
+
+    <!--  -->
+	<bean id="questionService"
+		class="com.wmp.selfService.service.impl.QuestionServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="questionAction" class="com.wmp.selfService.action.QuestionAction"
+		scope="prototype">
+		<property name="questionService" ref="questionService"></property>
+	</bean>
+	
+	<!-- 婚礼管理  -->
+	<bean id="actService"
+		class="com.wmp.selfService.service.impl.ActServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ActAction" class="com.wmp.selfService.action.ActAction" scope="prototype">
+		<property name="actService" ref="actService"></property>
+	</bean>
+
+	<!-- 用户管理  -->
+	<bean id="userManageService"
+		class="com.wmp.userManage.service.impl.UserManageServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="userManageAction"
+		class="com.wmp.userManage.action.UserManageAction"
+		scope="prototype">
+		<property name="userManageService" ref="userManageService"></property>
+	</bean>
+	
+	
+	<!-- 图片上传  -->
+	<bean id="uploadService"
+		class="com.wmp.selfService.service.impl.UploadServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="uploadAction"
+		class="com.wmp.selfService.action.UploadAction"
+		scope="prototype">
+		<property name="uploadService" ref="uploadService"></property>
+	</bean>	
+	
+	
+
+	<!-- 用户激活服务  -->
+	<bean id="orderService"
+		class="com.wmp.selfService.service.impl.OrderServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="orderAction"
+		class="com.wmp.selfService.action.OrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"></property>
+	</bean>
+
+	<!-- 短信服务  -->
+	<bean id="smsService"
+		class="com.wmp.sms.service.impl.SmsServiceImpl" scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="smsAction" class="com.wmp.sms.action.SmsAction"
+		scope="prototype">
+		<property name="smsService" ref="smsService"></property>
+	</bean>
+	
+	<bean id="synSmsService"
+		class="com.wmp.sms.service.impl.SynSmsServiceImpl" scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="synSmsAction" class="com.wmp.sms.action.SynSmsAction"
+		scope="prototype">
+		<property name="synSmsService" ref="synSmsService"></property>
+	</bean>
+
+	<!-- 用户抽奖  -->
+	<bean id="lotteryService"
+		class="com.wmp.selfService.service.impl.LotteryServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="lotteryAction"
+		class="com.wmp.selfService.action.LotteryAction" scope="prototype">
+		<property name="lotteryService" ref="lotteryService"></property>
+	</bean>
+	
+	<!-- 代理商管理  -->
+	<bean id="agentsManageService"
+		class="com.wmp.agents.service.impl.AgentsManageServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="agentsManageAction"
+		class="com.wmp.agents.action.AgentsManageAction" scope="prototype">
+		<property name="agentsManageService" ref="agentsManageService"></property>
+	</bean>
+	
+	<!-- 代理商子账户管理  -->
+	<bean id="subAccountService"
+		class="com.wmp.agents.service.impl.SubAccountServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="subAccountAction"
+		class="com.wmp.agents.action.SubAccountAction" scope="prototype">
+		<property name="subAccountService" ref="subAccountService"></property>
+	</bean>
+	
+	<!-- 模版管理  -->
+	<bean id="stencilService"
+		class="com.wmp.selfService.service.impl.StencilServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="stencilAction"
+		class="com.wmp.selfService.action.StencilAction" scope="prototype">
+		<property name="stencilService" ref="stencilService"></property>
+	</bean>
+
+	<!-- TEST  -->
+	<bean id="SMSTestService"
+		class="com.wmp.test.service.impl.SMSTestServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SMSTestAction"
+		class="com.wmp.test.action.SMSTestAction" scope="prototype">
+		<property name="SMSTestService" ref="SMSTestService"></property>
+	</bean>
+
+	<!-- =====================================TIMER============================================= -->
+
+	<!-- 定时器配置 -->
+	<!-- 配置定时器类 -->
+	<bean id="timeTasker" class="com.wmp.common.TimeTasker">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+
+	<!-- 指定任务（方法） -->
+	<bean id="timeTaskerA"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref local="timeTasker" />
+		</property>
+		<property name="targetMethod">
+			<value>setPeriodA</value>
+		</property>
+	</bean>
+	<bean id="timeTaskerB"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref local="timeTasker" />
+		</property>
+		<property name="targetMethod">
+			<value>setPeriodB</value>
+		</property>
+	</bean>
+	<bean id="timeTaskerC"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref local="timeTasker" />
+		</property>
+		<property name="targetMethod">
+			<value>setPeriodC</value>
+		</property>
+	</bean>
+	<bean id="updateErrorStatus"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<ref local="timeTasker" />
+		</property>
+		<property name="targetMethod">
+			<value>updateErrorStatus</value>
+		</property>
+	</bean>
+	
+	<!-- 设定计划执行时间 -->
+	<bean id="expDataBaseTriggerA"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref local="timeTaskerA" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 6 * * ?</value>
+		</property>
+	</bean>
+ 	<bean id="expDataBaseTriggerB"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref local="timeTaskerB" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 15 * * ?</value>
+		</property>
+	</bean>
+ 	<bean id="expDataBaseTriggerC"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref local="timeTaskerC" />
+		</property>
+		<property name="cronExpression">
+			<value>0 0 0 * * ?</value>
+		</property>
+	</bean>
+ 	<bean id="expUpdateErrorStatus"
+		class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<ref local="updateErrorStatus" />
+		</property>
+		<property name="cronExpression">
+			<value>0 30 3 * * ?</value>
+		</property>
+	</bean>
+	
+	<!-- 任务执行器配置 -->
+	<bean
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref local="expDataBaseTriggerA" />
+				<ref local="expDataBaseTriggerB" />
+				<ref local="expDataBaseTriggerC" />
+				<ref local="expUpdateErrorStatus" />
+			</list>
+		</property>
+	</bean>
+
+
+
+</beans>

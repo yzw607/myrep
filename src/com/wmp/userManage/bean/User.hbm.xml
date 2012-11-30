@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.userManage.bean.User" table="user">
+        <id name="userId" type="java.lang.Integer" column="user_id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="userCode" type="string" column="user_code" length="100"></property>
+        <property name="userName" type="string" column="user_name" length="100"></property>
+        <property name="passWord" type="string" column="pass_word" length="100"></property>
+        <property name="email" type="string" column="email" length="500"></property>
+        <property name="companyName" type="string" column="company_name" length="300"></property>
+        <property name="companyAddress" type="string" column="company_address" length="500"></property>
+        <property name="tel" type="string" column="tel" length="50"></property>
+        <property name="level" type="java.lang.Integer" column="level"></property>
+        <property name="userType" type="string" column="user_type" length="10"></property>
+        <property name="remainingTime" type="java.lang.Integer" column="remaining_time"></property>
+        <property name="registerDate" type="java.util.Date" column="register_date"></property>
+        <property name="port" type="string" column="port" length="300"></property>
+        <property name="sysTel" type="string" column="sys_tel" length="50"></property>
+        <property name="numberLimit" type="java.lang.Integer" column="number_limit"></property>
+        <property name="numberLimit2" type="java.lang.Integer" column="number_limit2"></property>
+        <property name="errorCount" type="java.lang.Integer" column="error_count"></property>
+        <property name="parentCode" type="string" column="parent_code" length="100"></property>
+        <property name="status" type="string" column="status" length="5"></property>
+    </class>
+</hibernate-mapping>

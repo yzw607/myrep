@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="common" extends="struts-default">
+		<action name="login" class="loginAction" method="doLogin">
+			<result name="success">/jsp/admin/home.jsp</result>
+			<result name="settingInfo">/jsp/admin/settingInfo.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="loginOut" class="loginAction" method="loginOut">
+			<result name="success">/login.jsp</result>
+		</action>
+		<action name="goHome" class="loginAction" method="goHome">
+			<result name="success">/jsp/admin/home.jsp</result>
+		</action>
+		<action name="register" class="registerAction"
+			method="doRegister">
+			<result name="success">/registerSuccess.jsp</result>
+			<result name="success2">/waitApproval.jsp</result>
+			<result name="error">/jsp/admin/userRegister.jsp</result>
+			<result name="input">/picExceed.jsp</result>
+		</action>
+		<action name="checkName" class="registerAction" method="checkName">
+			<result name="success"></result>
+		</action>
+		<action name="getForgetPsw" class="loginAction" method="getForgetPsw">
+			<result name="success">/prompterr.jsp</result>
+		</action>
+		<action name="updateUserInfo" class="loginAction" method="updateUserInfo">
+			<result name="success">/jsp/admin/home.jsp</result>
+		</action>
+	</package>
+
+	<package name="selfService" extends="struts-default">
+		<action name="queryNumber" class="numberAction" method="queryUserNumber">
+			<result name="success">/jsp/admin/userNumber.jsp</result>
+		</action>
+		<action name="setNumber" class="numberAction" method="setUserNumber">
+			<result name="success"></result>
+		</action>
+		<action name="delNumber" class="numberAction" method="delNumber">
+			<result name="success"></result>
+		</action>
+		<action name="orderService" class="orderAction" method="orderService">
+			<result name="success">/jsp/selfService/main.jsp</result>
+		</action>
+		<action name="queryInfo" class="infoAction" method="queryInfo">
+			<result name="success">/jsp/admin/default.jsp</result>
+		</action>
+		<action name="queryRecord" class="infoAction" method="queryRecord">
+			<result name="success">/jsp/admin/recordList.jsp</result>
+		</action>
+		<action name="goUpdateInfo" class="infoAction" method="goUpdateInfo">
+			<result name="success">/jsp/admin/updateInfo.jsp</result>
+		</action>
+		<action name="doUpdateInfo" class="infoAction" method="doUpdateInfo">
+			<result name="success">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="goUpdatePsw" class="infoAction" method="goUpdatePsw">
+			<result name="success">/jsp/admin/updatePsw.jsp</result>
+		</action>
+		<action name="doUpdatePsw" class="infoAction" method="doUpdatePsw">
+			<result name="success">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="querySubAccountRecord" class="infoAction" method="querySubAccountRecord">
+			<result name="success">/jsp/admin/subAccountRecordList.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="goRecharge" class="rechargeAction" method="goRechargeAction">
+			<result name="success">/jsp/admin/recharge.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="doRecharge" class="rechargeAction" method="doRecharge">
+			<result name="success">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="goAlipay" class="rechargeAction" method="goAlipay">
+			<result name="success">/jsp/admin/alipay/doAlipay.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="doAlipay" class="rechargeAction" method="doAlipay">
+			<result name="success">/jsp/admin/alipay/alipayto.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="payReturn" class="rechargeAction" method="payReturn">
+			<result name="success">/prompterr.jsp</result>
+			<result name="error">/404.jsp</result>
+		</action>
+		<action name="goAlipayInfo" class="rechargeAction" method="goAlipayInfo">
+			<result name="success">/jsp/admin/alipay/alipayInfo.jsp</result>
+		</action>
+	</package>
+
+	<package name="userManage" extends="struts-default">
+		<action name="adminLogin" class="userManageAction"
+			method="doLogin">
+			<result name="success">/jsp/userManage/frame.jsp</result>
+			<result name="error">/jsp/manager.jsp</result>
+		</action>
+		<action name="queryUser" class="userManageAction"
+			method="queryUser">
+			<result name="success">/jsp/userManage/userList.jsp</result>
+		</action>
+		<action name="showUser" class="userManageAction"
+			method="showUser">
+			<result name="success">/jsp/userManage/userInfo.jsp</result>
+		</action>
+		<action name="recharge" class="userManageAction"
+			method="recharge">
+			<result name="success">/jsp/userManage/userInfo.jsp</result>
+		</action>
+	</package>
+	
+	<package name="weddingPlan" extends="struts-default">
+		<action name="planList" class="planAction" method="planList">
+			<result name="success">/jsp/admin/planList.jsp</result>
+		</action>
+		<action name="goNewActivity" class="planAction" method="goNewActivity">
+			<result name="success">/jsp/admin/newActivityInfo.jsp</result>
+		</action>
+		<action name="saveActivity" class="planAction" method="saveActivity">
+			<result name="success">/jsp/admin/activityInfo.jsp</result>
+		</action>
+		<action name="delPic" class="planAction" method="delPic">
+		    <result name="success">/jsp/admin/activityInfo.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="viewActivity" class="planAction" method="viewActivity">
+			<result name="success">/jsp/admin/activityInfo.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+		</action>
+		<action name="updateActivity" class="planAction" method="updateActivity">
+			<result name="success">/jsp/admin/activityInfo.jsp</result>
+			<result name="input">/jsp/admin/picExceed.jsp</result>
+		</action>
+		<action name="doActivate" class="planAction" method="doActivate">
+			<result name="success">/jsp/admin/activityInfo.jsp</result>
+			<result name="input">/jsp/admin/picExceed.jsp</result>
+		</action>
+		<action name="doOrderBack" class="planAction" method="doOrderBack">
+			<result name="success">/jsp/admin/activityInfo.jsp</result>
+		</action>
+		<action name="dataExport" class="planAction" method="dataExport">
+			<result name="success">/jsp/admin/smsExport.jsp</result>
+		</action>
+		<action name="goUploadPic" class="uploadAction" method="goUploadPic">
+			<result name="success">/jsp/admin/uploadPics.jsp</result>
+		</action>
+		<action name="deleteUploadPic" class="uploadAction" method="deleteUploadPic">
+			<result name="success">/jsp/admin/uploadPics.jsp</result>
+		</action>
+		<action name="uploadPic" class="uploadAction" method="uploadPic">
+		</action>
+	</package>
+	
+	<package name="actManage" extends="struts-default">
+	    <action name="newAct" class="ActAction" method="newAct">
+			<result name="success">/jsp/admin/act_one.jsp</result>
+		</action>
+	</package>
+
+	<package name="question" extends="struts-default">
+		<action name="settingQuestions" class="questionAction" method="settingQuestions">
+			<result name="success">/jsp/admin/newQuestions.jsp</result>
+			<result name="error">/prompterr.jsp</result>
+		</action>
+		<action name="viewQuestions" class="questionAction" method="viewQuestions">
+			<result name="success">/jsp/question/showQuestion.jsp</result>
+			<result name="preViewQuestion">/jsp/question/preViewQuestion.jsp</result>
+			<result name="error">/prompterr.jsp</result>
+		</action>
+		<action name="addQuestion" class="questionAction" method="addQuestion">
+			<result name="success">/jsp/admin/newQuestions.jsp</result>
+		</action>
+		<action name="delQuestion" class="questionAction" method="delQuestion">
+			<result name="success">/jsp/admin/newQuestions.jsp</result>
+		</action>
+		<action name="getNewestQuestion" class="questionAction" method="getNewestQuestion">
+			<result name="success"></result>
+		</action>
+		<action name="getTheLatestAnswer" class="questionAction" method="getTheLatestAnswer">
+			<result name="success"></result>
+		</action>
+	</package>
+
+	<package name="sms" extends="struts-default">
+		<action name="goSms" class="smsAction" method="goSms">
+			<result name="success">/jsp/sms/smsSetting.jsp</result>
+			<result name="empty">/jsp/selfService/main.jsp</result>
+		</action>
+		<action name="showSMSPage" class="smsAction" method="showSMSPage">
+		    <result name="sms-1">/jsp/sms/sms.jsp</result>
+			<result name="sms-2">/jsp/sms/widthSMS.jsp</result>
+			<result name="sms1">/jsp/sms/sms1.jsp</result>
+			<result name="sms2">/jsp/sms/sms2.jsp</result>
+			<result name="number_error">/jsp/sms/smsRechoose.jsp</result>
+		</action>
+		<action name="preViewSMSPage" class="smsAction" method="preViewSMSPage">
+			<result name="sms1">/jsp/sms/preViewSMS1.jsp</result>
+			<result name="sms2">/jsp/sms/preViewSMS2.jsp</result>
+			<result name="sms4_3_1">/jsp/sms/preViewSMS4_3_1.jsp</result>
+		</action>
+		<action name="loadSMS" class="smsAction" method="loadSMS">
+			<result name="success"></result>
+		</action>
+		<action name="startTiming" class="smsAction" method="startTiming">
+			<result name="success"></result>
+		</action>
+		<action name="endTiming" class="smsAction" method="endTiming">
+			<result name="success"></result>
+		</action>
+		
+		<action name="woaishuo" class="synSmsAction" method="woaishuo">
+			<result name="success">/synShowSms.jsp</result>
+			<result name="error">/synError.jsp</result>
+		</action>
+		<action name="loadSynSms" class="synSmsAction" method="loadSynSms">
+			<result name="success"></result>
+		</action>
+	</package>
+	
+	<package name="lottery" extends="struts-default">
+		<action name="readyForLottery" class="lotteryAction" method="readyForLottery">
+			<result name="success">/jsp/admin/readyForlottery.jsp</result>
+		</action>
+		<action name="goLottery" class="lotteryAction" method="goLottery">
+			<result name="success">/jsp/lottery/lottery.jsp</result>
+		</action>
+		<action name="preViewLottery" class="lotteryAction" method="preViewLottery">
+			<result name="success">/jsp/lottery/preViewLottery.jsp</result>
+		</action>
+		<action name="settingLottery" class="lotteryAction" method="settingLottery">
+			<result name="success">/jsp/admin/settingLottery.jsp</result>
+		</action>
+		<action name="addLotteryNumber" class="lotteryAction" method="addLotteryNumber">
+			<result name="success">/jsp/admin/settingLottery.jsp</result>
+		</action>
+		<action name="delNumber" class="lotteryAction" method="delNumber">
+			<result name="success">/jsp/admin/settingLottery.jsp</result>
+		</action>
+	</package>
+	
+	<package name="agents" extends="struts-default">
+	    <interceptors>
+	        <interceptor name="adminInterceptor" class="com.wmp.common.interceptor.AdminInterceptor"/>
+	        <interceptor-stack name="adminDefault">
+	            <interceptor-ref name="adminInterceptor"/>
+	            <interceptor-ref name="defaultStack" />
+	        </interceptor-stack>
+	    </interceptors>
+	    <default-interceptor-ref name="adminDefault" />
+	    <global-results>
+            <result name="login">/404.jsp</result>
+        </global-results>
+        
+		<action name="agentsList" class="agentsManageAction" method="agentsList">
+			<result name="success">/jsp/admin/agentsList.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+            <interceptor-ref name="adminInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+		</action>
+		<action name="changeStatus" class="agentsManageAction" method="changeStatus">
+			<result name="success">/jsp/admin/activityInfo.jsp</result>
+		</action>
+	</package>
+	
+	<package name="subAccount" extends="struts-default">
+	    <interceptors>
+	        <interceptor name="agentsInterceptor" class="com.wmp.common.interceptor.AgentsInterceptor"/>
+	        <interceptor-stack name="agentsDefault">
+	            <interceptor-ref name="agentsInterceptor"/>
+	            <interceptor-ref name="defaultStack" />
+	        </interceptor-stack>
+	    </interceptors>
+	    <default-interceptor-ref name="agentsDefault" />
+	    <global-results>
+            <result name="login">/404.jsp</result>
+        </global-results>
+		<action name="subAccount" class="subAccountAction" method="subAccount">
+			<result name="success">/jsp/admin/subAccountList.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+            <interceptor-ref name="agentsInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+		</action>
+		<action name="goNewSubAccount" class="subAccountAction" method="goNewSubAccount">
+			<result name="success">/jsp/admin/createSubAccount.jsp</result>
+            <interceptor-ref name="agentsInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+		</action>
+		<action name="createSubAccount" class="subAccountAction" method="createSubAccount">
+		    <result name="success">/jsp/admin/subAccountInfo.jsp</result>
+			<result name="error">/jsp/admin/createSubAccount.jsp</result>
+            <interceptor-ref name="agentsInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+		</action>
+		<action name="querySubAccountInfo" class="subAccountAction" method="querySubAccountInfo">
+		    <result name="success">/jsp/admin/subAccountInfo.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+            <interceptor-ref name="agentsInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+		</action>
+		<action name="initPsw" class="subAccountAction" method="initPsw">
+		    <result name="success">/jsp/admin/subAccountInfo.jsp</result>
+			<result name="error">/jsp/admin/info.jsp</result>
+            <interceptor-ref name="agentsInterceptor"/>
+            <interceptor-ref name="defaultStack" />
+		</action>
+		
+	</package>
+	
+	<package name="stencil" extends="struts-default">
+		<action name="queryStencil" class="stencilAction" method="queryStencil">
+			<result name="success">/jsp/admin/stencilList.jsp</result>
+		</action>
+	</package>
+	
+	<package name="test" extends="struts-default">
+		<action name="smsTest" class="SMSTestAction" method="smsTest">
+			<result name="success">/jsp/test/input.jsp</result>
+			<result name="error">/prompterr.jsp</result>
+		</action>
+	</package>
+</struts>

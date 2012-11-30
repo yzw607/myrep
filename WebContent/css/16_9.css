@@ -1,0 +1,246 @@
+* {
+	padding:0;
+	margin:0;
+	font-family:"微软雅黑";
+}
+body {
+	/*overflow:hidden;*/
+}
+li {
+	list-style:none;
+}
+.page {
+	position:relative;
+	overflow:hidden;
+	width:1366px;
+	height:768px;
+	margin:0 auto;
+	background:url(../images/16_9/bg.jpg) no-repeat;
+}
+.leftcon,.rightcon {
+	float:left;
+	width:50%;
+}
+.logo {
+	position:absolute;
+	top:5px;
+	left:10px;
+}
+.tips {
+	position:absolute;
+	top:0px;
+	left:683px;
+	background:url(../images/16_9/ico.png) no-repeat;
+	width:683px;
+	height:95px;
+	padding:10px 0 0 90px;
+}
+.tips p {
+	clear:both;
+}
+.tips1 {
+	position:relative;
+	height:40px;
+	background:url(../images/16_9/text1.png) no-repeat;
+}
+.tips1 .t1_1 {
+	display:block;
+	height:32px;
+	padding:2px 0;
+	line-height:40px;
+	padding-left:140px;
+}
+.tips1 .t1_2 {
+	position:absolute;
+	left:240px;
+	top:0;
+	display:block;
+	height:40px;
+	line-height:40px;
+}
+.tips2 {
+	height:40px;
+	padding-left:90px;
+	line-height:40px;
+	background:url(../images/16_9/text2.png) 0 50% no-repeat;
+}
+.tips2 .t2_1 {
+	display: inline-block;
+	height:36px;
+	padding:2px 0;
+	padding-right:152px;
+	background:url(../images/16_9/text3.png) 100% 50% no-repeat;
+}
+.tips3 {
+	padding-left:20px;
+}
+.tools {
+	position:absolute;
+	top:22px;
+	left:500px;
+}
+.tools li {
+	float:left;
+	width:48px;
+	height:48px;
+	margin-right:5px;
+}
+.tools li a {
+	display:block;
+	width:48px;
+	height:48px;
+	text-indent:-999em;
+}
+.tools li.tools1 a {
+	background:url(../images/16_9/smsbtn_gray.png) no-repeat;
+}
+.tools li.tools1 a:hover,.tools li.tools1 a.active {
+	background:url(../images/16_9/smsbtn.png) no-repeat;
+}
+.tools li.tools2 a {
+	background:url(../images/16_9/cjbtn_gray.png) no-repeat;
+}
+.tools li.tools2 a:hover,.tools li.tools2 a.active {
+	background:url(../images/16_9/cjbtn.png) no-repeat;
+}
+.tools li.tools3 a {
+	background:url(../images/16_9/dtbtn_gray.png) no-repeat;
+}
+.tools li.tools3 a:hover,.tools li.tools3 a.active {
+	background:url(../images/16_9/dtbtn.png) no-repeat;
+}
+.title {
+	position:absolute;
+	top:20px;
+	left:212px;
+	width:600px;
+}
+.title h2{
+	width:100%;
+	text-align:center;
+}
+.title h3{
+	width:100%;
+	font-size:32px;
+	text-align:center;
+}
+.main {
+	padding-top:100px;
+}
+.content {
+	overflow:hidden;
+	width:663px;
+	height:560px;
+	margin:10px auto;
+}
+.msg li {
+	position:relative;
+	overflow:hidden;
+	width:628px;
+	height:164px;
+	padding:5px 15px 10px 20px;
+	margin-bottom:10px;
+	background:url(../images/16_9/msg-bg.png) no-repeat;
+}
+.msg li h3 {
+	font-size:30px;
+	font-style:italic;
+	color:#d21e2a;
+}
+.msg li.threeline p {
+	font-size:26px;
+	line-height:36px;
+}
+.msg li.twoline p {
+	font-size:26px;
+	line-height:36px;
+}
+.msg li.oneline p {
+	font-size:26px;
+	line-height:36px;
+}
+.footer {
+	width:95%;
+	height:40px;
+	margin:620px auto 0;
+	opacity:0.7;
+	border-width: 1px;
+	border-style: solid;
+	border-color:#FFFFFF;
+	-moz-border-radius: 8px;
+	-khtml-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	background:#FFFFFF;
+}
+.copyright {
+	width:100%;
+	text-align:center;
+	font-size:24px;
+	line-height:40px;
+	color:#FF00FF;
+}
+
+.picslide {
+	width:663px;
+	margin:30px 10px 0;
+}
+#bigPic{
+	width:560px;
+	height:372px;
+	padding:1px;
+	border:1px solid #CCC;
+	background-color:#FFF;
+	margin:0 auto 10px;
+}
+#bigPic img{
+	position:absolute;
+	display:none;
+	width:560px;
+	height:372px;
+}
+.cd {
+	position:absolute;
+	top:397px;
+	left:-37px;
+	z-index:999;
+}
+.name {
+	position:absolute;
+	top:590px;
+	left:50px;
+	z-index:999;
+	font-size:32px;
+	font-family:"微软雅黑";
+	color: #F30;
+	font-weight:bold;
+	text-shadow:2px 2px 5px #fff;
+}
+.xhkl {
+	position:absolute;
+	top:580px;
+	left:270px;
+	z-index:999;
+}
+
+.ycc
+{
+	width:640px; 
+	height:30px; 
+	background:url(../images/sms/litopbg.png); 
+	display:none; 
+	z-index:100; 
+	position:absolute; 
+	top:7px; 
+	left:14px; 
+	line-height:30px; 
+	font-size:12px; 
+	font-weight:bold;
+}
+
+.ycc span
+{ 
+	color:#000066;
+	float:right; 
+	margin-right:15px;
+ }

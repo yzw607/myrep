@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.sms.bean.MsgInBox" table="msg_inbox">
+        <id name="id" type="java.lang.Integer" column="id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="sender" type="string" column="Sender" length="100"></property>
+        <property name="msgType" type="java.lang.Integer" column="MsgType"></property>
+        <property name="msgTitle" type="string" column="MsgTitle" length="500"></property>
+        <property name="MMSURL" type="string" column="MMSUrl" length="200"></property>
+        <property name="MMSContentLocation" type="string" column="MMSContentLocation" length="5000"></property>
+        <property name="MMSDownloadedState" type="java.lang.Integer" column="MMSDownloadedState"></property>
+        <property name="commPort" type="java.lang.Integer" column="CommPort"></property>
+        <property name="status" type="string" column="status" length="4"></property>
+        <property name="msgArrivedTime" type="java.util.Date" column="msgarrivedtime"></property>
+        <property name="activityId" type="string" column="activity_id" length="4"></property>
+    </class>
+</hibernate-mapping>
