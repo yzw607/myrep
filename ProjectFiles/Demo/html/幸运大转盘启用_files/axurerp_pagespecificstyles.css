@@ -1,0 +1,1138 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../幸运大转盘启用_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:54px;
+    top:52px;
+    width:146px;
+    height:63px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:146px;
+    height:63px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:142px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2_normal {
+    background-image: url('../幸运大转盘启用_files/u2_normal.png');
+}
+
+.u2_container {
+    position:absolute;
+    left:237px;
+    top:58px;
+    width:48px;
+    height:48px;
+}
+
+#u2_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:48px;
+    height:48px;
+}
+
+.u3 {
+    position:absolute;
+    left:2px;
+    top:16px;
+    width:44px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../幸运大转盘启用_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:316px;
+    top:58px;
+    width:48px;
+    height:48px;
+}
+
+#u4_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:48px;
+    height:48px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:16px;
+    width:44px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6_normal {
+    background-image: url('../幸运大转盘启用_files/u6_normal.png');
+}
+
+.u6_container {
+    position:absolute;
+    left:546px;
+    top:45px;
+    width:259px;
+    height:70px;
+}
+
+#u6_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:259px;
+    height:70px;
+}
+
+.u7 {
+    position:absolute;
+    left:2px;
+    top:27px;
+    width:255px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u8_normal {
+    background-image: url('../幸运大转盘启用_files/u8_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:63px;
+    top:174px;
+    width:263px;
+    height:197px;
+}
+
+#u8_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:263px;
+    height:197px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:90px;
+    width:259px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10_normal {
+    background-image: url('../幸运大转盘启用_files/u10_normal.png');
+}
+
+.u10_container {
+    position:absolute;
+    left:352px;
+    top:136px;
+    width:705px;
+    height:196px;
+}
+
+#u10_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:705px;
+    height:196px;
+}
+
+.u11 {
+    position:absolute;
+    left:2px;
+    top:90px;
+    width:701px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_normal {
+    background-image: url('../幸运大转盘启用_files/u12_normal.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:352px;
+    top:342px;
+    width:705px;
+    height:437px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:705px;
+    height:437px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:210px;
+    width:701px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14_normal {
+    background-image: url('../幸运大转盘启用_files/u14_normal.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:595px;
+    top:260px;
+    width:219px;
+    height:48px;
+}
+
+#u14_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:219px;
+    height:48px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:16px;
+    width:215px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16 {
+    position:absolute;
+    left:550px;
+    top:184px;
+    width:321px;
+    height:50px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 48px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+#u17 {
+    position:absolute;
+    left:474px;
+    top:401px;
+    width:521px;
+    height:310px
+}
+
+.u18_normal {
+    background-image: url('../幸运大转盘启用_files/u18_normal.png');
+}
+
+.u18_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:257px;
+    height:28px;
+}
+
+#u18_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u19 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u20_normal {
+    background-image: url('../幸运大转盘启用_files/u20_normal.png');
+}
+
+.u20_container {
+    position:absolute;
+    left:257px;
+    top:0px;
+    width:259px;
+    height:28px;
+}
+
+#u20_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u21 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u22_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u22_container {
+    position:absolute;
+    left:0px;
+    top:28px;
+    width:257px;
+    height:28px;
+}
+
+#u22_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u23 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u24_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u24_container {
+    position:absolute;
+    left:257px;
+    top:28px;
+    width:259px;
+    height:28px;
+}
+
+#u24_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u25 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u26_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u26_container {
+    position:absolute;
+    left:0px;
+    top:56px;
+    width:257px;
+    height:28px;
+}
+
+#u26_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u27 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u28_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u28_container {
+    position:absolute;
+    left:257px;
+    top:56px;
+    width:259px;
+    height:28px;
+}
+
+#u28_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u29 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u30_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u30_container {
+    position:absolute;
+    left:0px;
+    top:84px;
+    width:257px;
+    height:28px;
+}
+
+#u30_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u31 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u32_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u32_container {
+    position:absolute;
+    left:257px;
+    top:84px;
+    width:259px;
+    height:28px;
+}
+
+#u32_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u33 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u34_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u34_container {
+    position:absolute;
+    left:0px;
+    top:112px;
+    width:257px;
+    height:28px;
+}
+
+#u34_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u35 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u36_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u36_container {
+    position:absolute;
+    left:257px;
+    top:112px;
+    width:259px;
+    height:28px;
+}
+
+#u36_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u37 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u38_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u38_container {
+    position:absolute;
+    left:0px;
+    top:140px;
+    width:257px;
+    height:28px;
+}
+
+#u38_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u39 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u40_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u40_container {
+    position:absolute;
+    left:257px;
+    top:140px;
+    width:259px;
+    height:28px;
+}
+
+#u40_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u41 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u42_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u42_container {
+    position:absolute;
+    left:0px;
+    top:168px;
+    width:257px;
+    height:28px;
+}
+
+#u42_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u43 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u44_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u44_container {
+    position:absolute;
+    left:257px;
+    top:168px;
+    width:259px;
+    height:28px;
+}
+
+#u44_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u45 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u46_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u46_container {
+    position:absolute;
+    left:0px;
+    top:196px;
+    width:257px;
+    height:28px;
+}
+
+#u46_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u47 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u48_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u48_container {
+    position:absolute;
+    left:257px;
+    top:196px;
+    width:259px;
+    height:28px;
+}
+
+#u48_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u49 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u50_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u50_container {
+    position:absolute;
+    left:0px;
+    top:224px;
+    width:257px;
+    height:28px;
+}
+
+#u50_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u51 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u52_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u52_container {
+    position:absolute;
+    left:257px;
+    top:224px;
+    width:259px;
+    height:28px;
+}
+
+#u52_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u53 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u54_normal {
+    background-image: url('../幸运大转盘启用_files/u22_normal.png');
+}
+
+.u54_container {
+    position:absolute;
+    left:0px;
+    top:252px;
+    width:257px;
+    height:28px;
+}
+
+#u54_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:34px;
+}
+
+.u55 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u56_normal {
+    background-image: url('../幸运大转盘启用_files/u24_normal.png');
+}
+
+.u56_container {
+    position:absolute;
+    left:257px;
+    top:252px;
+    width:259px;
+    height:28px;
+}
+
+#u56_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:34px;
+}
+
+.u57 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:22px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u58_normal {
+    background-image: url('../幸运大转盘启用_files/u58_normal.png');
+}
+
+.u58_container {
+    position:absolute;
+    left:0px;
+    top:280px;
+    width:257px;
+    height:25px;
+}
+
+#u58_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:263px;
+    height:31px;
+}
+
+.u59 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:253px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u60_normal {
+    background-image: url('../幸运大转盘启用_files/u60_normal.png');
+}
+
+.u60_container {
+    position:absolute;
+    left:257px;
+    top:280px;
+    width:259px;
+    height:25px;
+}
+
+#u60_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:265px;
+    height:31px;
+}
+
+.u61 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:255px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u62_normal {
+    background-image: url('../幸运大转盘启用_files/u62_normal.png');
+}
+
+.u62_container {
+    position:absolute;
+    left:520px;
+    top:721px;
+    width:168px;
+    height:37px;
+}
+
+#u62_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:168px;
+    height:37px;
+}
+
+.u63 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:164px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u64_normal {
+    background-image: url('../幸运大转盘启用_files/u64_normal.png');
+}
+
+.u64_container {
+    position:absolute;
+    left:788px;
+    top:721px;
+    width:168px;
+    height:37px;
+}
+
+#u64_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:168px;
+    height:37px;
+}
+
+.u65 {
+    position:absolute;
+    left:2px;
+    top:10px;
+    width:164px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

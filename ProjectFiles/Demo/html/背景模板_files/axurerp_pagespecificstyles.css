@@ -1,0 +1,286 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_container {
+    position:absolute;
+    left:38px;
+    top:107px;
+    width:197px;
+    height:104px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:197px;
+    height:104px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:44px;
+    width:193px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2_normal {
+    background-image: url('../背景模板_files/u2_normal.png');
+}
+
+.u2_container {
+    position:absolute;
+    left:38px;
+    top:74px;
+    width:908px;
+    height:23px;
+}
+
+#u2_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:914px;
+    height:29px;
+}
+
+.u3 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:904px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../背景模板_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:46px;
+    top:221px;
+    width:180px;
+    height:19px;
+}
+
+#u4_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:25px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:176px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6_container {
+    position:absolute;
+    left:328px;
+    top:107px;
+    width:197px;
+    height:104px;
+}
+
+#u6_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:197px;
+    height:104px;
+}
+
+.u7 {
+    position:absolute;
+    left:2px;
+    top:44px;
+    width:193px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u8_normal {
+    background-image: url('../背景模板_files/u4_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:336px;
+    top:221px;
+    width:180px;
+    height:19px;
+}
+
+#u8_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:186px;
+    height:25px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:176px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10_normal {
+    background-image: url('../背景模板_files/u10_normal.png');
+}
+
+.u10_container {
+    position:absolute;
+    left:623px;
+    top:221px;
+    width:195px;
+    height:19px;
+}
+
+#u10_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:201px;
+    height:25px;
+}
+
+.u11 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:191px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_container {
+    position:absolute;
+    left:621px;
+    top:107px;
+    width:197px;
+    height:104px;
+}
+
+#u12_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:197px;
+    height:104px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:44px;
+    width:193px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14 {
+    position:absolute;
+    left:38px;
+    top:510px;
+    width:180px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u15 {
+    position:absolute;
+    left:228px;
+    top:510px;
+    width:63px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+

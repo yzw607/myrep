@@ -1,0 +1,542 @@
+﻿body {
+    margin: 0px;
+}
+
+div {
+    background-repeat: no-repeat;
+}
+
+.raw_image {
+    width: 100%;
+    height: 100%;
+}
+
+.preload {
+    display: none;
+}
+#main_container {
+}
+
+.form_sketch {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.u0_normal {
+    background-image: url('../短信许愿墙预览_files/u0_normal.png');
+}
+
+.u0_container {
+    position:absolute;
+    left:54px;
+    top:52px;
+    width:146px;
+    height:63px;
+}
+
+#u0_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:146px;
+    height:63px;
+}
+
+.u1 {
+    position:absolute;
+    left:2px;
+    top:24px;
+    width:142px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u2_normal {
+    background-image: url('../短信许愿墙预览_files/u2_normal.png');
+}
+
+.u2_container {
+    position:absolute;
+    left:237px;
+    top:58px;
+    width:48px;
+    height:48px;
+}
+
+#u2_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:48px;
+    height:48px;
+}
+
+.u3 {
+    position:absolute;
+    left:2px;
+    top:16px;
+    width:44px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u4_normal {
+    background-image: url('../短信许愿墙预览_files/u4_normal.png');
+}
+
+.u4_container {
+    position:absolute;
+    left:316px;
+    top:58px;
+    width:48px;
+    height:48px;
+}
+
+#u4_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:48px;
+    height:48px;
+}
+
+.u5 {
+    position:absolute;
+    left:2px;
+    top:16px;
+    width:44px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u6_normal {
+    background-image: url('../短信许愿墙预览_files/u6_normal.png');
+}
+
+.u6_container {
+    position:absolute;
+    left:830px;
+    top:52px;
+    width:60px;
+    height:60px;
+}
+
+#u6_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:60px;
+    height:60px;
+}
+
+.u7 {
+    position:absolute;
+    left:2px;
+    top:22px;
+    width:56px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u8_normal {
+    background-image: url('../短信许愿墙预览_files/u8_normal.png');
+}
+
+.u8_container {
+    position:absolute;
+    left:385px;
+    top:67px;
+    width:407px;
+    height:33px;
+}
+
+#u8_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:407px;
+    height:33px;
+}
+
+.u9 {
+    position:absolute;
+    left:2px;
+    top:8px;
+    width:403px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u10_normal {
+    background-image: url('../短信许愿墙预览_files/u10_normal.png');
+}
+
+.u10_container {
+    position:absolute;
+    left:68px;
+    top:139px;
+    width:500px;
+    height:200px;
+}
+
+#u10_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:500px;
+    height:200px;
+}
+
+.u11 {
+    position:absolute;
+    left:2px;
+    top:92px;
+    width:496px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u12_normal {
+    background-image: url('../短信许愿墙预览_files/u12_normal.png');
+}
+
+.u12_container {
+    position:absolute;
+    left:653px;
+    top:139px;
+    width:220px;
+    height:63px;
+}
+
+#u12_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:226px;
+    height:69px;
+}
+
+.u13 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:216px;
+    height:48px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u14_normal {
+    background-image: url('../短信许愿墙预览_files/u14_normal.png');
+}
+
+.u14_container {
+    position:absolute;
+    left:653px;
+    top:223px;
+    width:220px;
+    height:66px;
+}
+
+#u14_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:226px;
+    height:72px;
+}
+
+.u15 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:216px;
+    height:64px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u16_normal {
+    background-image: url('../短信许愿墙预览_files/u14_normal.png');
+}
+
+.u16_container {
+    position:absolute;
+    left:653px;
+    top:312px;
+    width:220px;
+    height:66px;
+}
+
+#u16_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:226px;
+    height:72px;
+}
+
+.u17 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:216px;
+    height:64px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+#u18 {
+    position:absolute;
+    left:92px;
+    top:391px;
+    width:205px;
+    height:65px
+}
+
+.u19_normal {
+    background-image: url('../短信许愿墙预览_files/u19_normal.png');
+}
+
+.u19_container {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100px;
+    height:20px;
+}
+
+#u19_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u20 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u21_normal {
+    background-image: url('../短信许愿墙预览_files/u19_normal.png');
+}
+
+.u21_container {
+    position:absolute;
+    left:100px;
+    top:0px;
+    width:100px;
+    height:20px;
+}
+
+#u21_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u22 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u23_normal {
+    background-image: url('../短信许愿墙预览_files/u19_normal.png');
+}
+
+.u23_container {
+    position:absolute;
+    left:0px;
+    top:20px;
+    width:100px;
+    height:20px;
+}
+
+#u23_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u24 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u25_normal {
+    background-image: url('../短信许愿墙预览_files/u19_normal.png');
+}
+
+.u25_container {
+    position:absolute;
+    left:100px;
+    top:20px;
+    width:100px;
+    height:20px;
+}
+
+#u25_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u26 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u27_normal {
+    background-image: url('../短信许愿墙预览_files/u19_normal.png');
+}
+
+.u27_container {
+    position:absolute;
+    left:0px;
+    top:40px;
+    width:100px;
+    height:20px;
+}
+
+#u27_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u28 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u29_normal {
+    background-image: url('../短信许愿墙预览_files/u19_normal.png');
+}
+
+.u29_container {
+    position:absolute;
+    left:100px;
+    top:40px;
+    width:100px;
+    height:20px;
+}
+
+#u29_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:106px;
+    height:26px;
+}
+
+.u30 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:96px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

@@ -1,0 +1,303 @@
+﻿<html>
+<head>
+    <title>短信许愿墙预览</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="imagetoolbar" content="no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet">
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet">
+    <link href="短信许愿墙预览_files/axurerp_pagespecificstyles.css" type="text/css" rel="stylesheet">
+<!--[if IE 6]>
+    <link href="短信许愿墙预览_files/axurerp_pagespecificstyles_ie6.css" type="text/css" rel="stylesheet">
+<![endif]-->
+    <script src="data/sitemap.js"></script>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axurerp_beforepagescript.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+<script src='短信许愿墙预览_files/data.js'></script>
+
+<script>
+function mouseover()
+{
+var obj=event.srcElement;
+//if is the clicked tab, color should remain unchanged
+if(this.className!="clicked")
+this.className="mouseover";
+}
+
+function mouseout()
+{
+var obj=event.srcElement;
+//if is the clicked tab, color should remain unchanged
+if(this.className!="clicked")
+this.className="mouseout";
+}
+
+function releaseFunction()
+{
+var obj=event.srcElement;
+var tr=obj.parentElement;
+var cellIndex=obj.cellIndex;
+var cells=tr.cells;
+for(var i=0;i<cells.length;i++)
+{
+//if is the clicked tab, color should remain unchanged
+if(cellIndex!=i)
+   cells[i].className="mouseout";
+}
+obj.className="clicked";
+
+var tableId=tr.parentElement.parentElement.id;
+//alert(tableId)
+if("upperTable"==tableId)
+displayUpperLayer(cellIndex);
+else
+displayLowerLayer(cellIndex);
+}
+
+
+function displayUpperLayer(index)
+{
+//the following will display the visible layer
+for(var i=0;i<2;i++)
+{
+if(index==i)
+{
+   document.getElementById("upperLayer"+i).style.display="block";
+}
+else
+{
+   document.getElementById("upperLayer"+i).style.display="none";
+}
+}
+}
+
+function displayLowerLayer(index)
+{
+//the following will display the visible layer
+for(var i=0;i<4;i++)
+{
+if(index==i)
+{
+   document.getElementById("lowerLayer"+i).style.display="block";
+}
+else
+{
+   document.getElementById("lowerLayer"+i).style.display="none";
+}
+}
+}
+
+</script>
+<style>
+
+
+.mouseover
+{
+abc:expression(this.onmouseout=mouseout);
+efg:expression(this.onmouseover=mouseover);
+opq:expression(this.onclick=releaseFunction);
+font-family : Verdana;
+font-size: 20;
+cursor:hand;
+height: 18;
+border:1px groove orange;
+border-bottom-style: groove;
+border-width : think;
+padding-left: 3px;
+text-align:center;
+
+background-color="yellow";
+font-weight : italic;
+}
+
+
+.mouseout
+{
+abc:expression(this.onmouseout=mouseout);
+efg:expression(this.onmouseover=mouseover);
+opq:expression(this.onclick=releaseFunction);
+font-family : Verdana;
+font-size: 20;
+cursor:hand;
+height: 18;
+border:1px groove orange;
+border-bottom-style: groove;
+border-width : think;
+padding-left: 3px;
+text-align:center;
+
+background-color="white";
+font-weight : normal;
+}
+
+
+.clicked
+{
+abc:expression(this.onmouseout=mouseout);
+efg:expression(this.onmouseover=mouseover);
+opq:expression(this.onclick=releaseFunction);
+font-family : Verdana;
+font-size: 20;
+cursor:hand;
+height: 18;
+border:1px groove orange;
+border-bottom-style: groove;
+border-width : think;
+padding-left: 3px;
+text-align:center;
+
+background-color="pink";
+font-weight : bold;
+border-bottom-style : none;
+/*background-image: url(right.gif);*/
+}
+
+.ttd { 
+abc:expression(this.onmouseout=mouseout);
+efg:expression(this.onmouseover=mouseover);
+opq:expression(this.onclick=releaseFunction);
+font-family : Verdana;
+font-size: 20;
+cursor:hand;
+height: 18;
+border:1px groove orange;
+border-bottom-style: groove;
+border-width : think;
+padding-left: 3px;
+text-align:center;
+}
+
+
+/*content of the upper two tabs*/
+.panelUpper{
+border-width: 1px;
+border-style: solid ;
+width: 160%;
+/*height: 192px; */
+z-index: 1;
+overflow: auto;
+}
+
+/*content of the lower four tabs*/
+.panelLower{
+border-width: 1px;
+border-style: solid ;
+width: 90%;
+/*height: 192px; */
+z-index: 1;
+overflow: auto;
+}
+
+
+</style>
+</head>
+<body>
+<div id="main_container">
+
+<div id="u0" class="u0_container"   >
+<div id="u0_img" class="u0_normal detectCanvas"></div>
+<div id="u1" class="u1" style="visibility:hidden;"  >
+<div id="u1_rtf"></div>
+</div>
+</div>
+<div id="u2" class="u2_container" title="短信许愿墙"  >
+<div id="u2_img" class="u2_normal detectCanvas"></div>
+<div id="u3" class="u3" style="visibility:hidden;"  >
+<div id="u3_rtf"></div>
+</div>
+</div>
+<div id="u4" class="u4_container" title="幸运大转盘"  >
+<div id="u4_img" class="u4_normal detectCanvas"></div>
+<div id="u5" class="u5" style="visibility:hidden;"  >
+<div id="u5_rtf"></div>
+</div>
+</div>
+<div id="u6" class="u6_container"   >
+<div id="u6_img" class="u6_normal detectCanvas"></div>
+<div id="u7" class="u7" style="visibility:hidden;"  >
+<div id="u7_rtf"></div>
+</div>
+</div>
+<div id="u8" class="u8_container"   >
+<div id="u8_img" class="u8_normal detectCanvas"></div>
+<div id="u9" class="u9" style="visibility:hidden;"  >
+<div id="u9_rtf"></div>
+</div>
+</div>
+<div id="u10" class="u10_container"   >
+<div id="u10_img" class="u10_normal detectCanvas"></div>
+<div id="u11" class="u11" style="visibility:hidden;"  >
+<div id="u11_rtf"></div>
+</div>
+</div>
+<div id="u12" class="u12_container"   >
+<div id="u12_img" class="u12_normal detectCanvas"></div>
+<div id="u13" class="u13"  >
+<div id="u13_rtf"><p style="text-align:left;"><span style="font-family:Arial;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;">大姑：</span></p><p style="text-align:left;"><span style="font-family:Arial;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;">短信1短信1短信1短信1短信1短信1短信1短信1短信1短信1短信1短信1</span></p></div>
+</div>
+</div>
+<div id="u14" class="u14_container"   >
+<div id="u14_img" class="u14_normal detectCanvas"></div>
+<div id="u15" class="u15"  >
+<div id="u15_rtf"><p style="text-align:left;"><span style="font-family:Arial;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;">小姨：</span></p><p style="text-align:left;"><span style="font-family:Arial;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;">短信2短信2短信2短信2短信2短信2短信2短信2短信2短信2短信2短信2短信2短信2</span></p></div>
+</div>
+</div>
+<div id="u16" class="u16_container"   >
+<div id="u16_img" class="u16_normal detectCanvas"></div>
+<div id="u17" class="u17"  >
+<div id="u17_rtf"><p style="text-align:left;"><span style="font-family:Arial;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;">二伯：</span></p><p style="text-align:left;"><span style="font-family:Arial;font-size:13px;font-weight:normal;font-style:normal;text-decoration:none;color:#333333;">短信3短信3短信3短信3短信3短信3短信3短信3短信3短信3短信3短信3短信3短信3</span></p></div>
+</div>
+</div>
+<DIV id="u18" class="u18;" >
+
+</DIV>
+
+<DIV id="u18container" style="position:absolute; left:92px; top:391px; width:205px; height:65px; overflow:visible">
+
+
+<!--*******************************************************-->
+<!--the following will be the output forecast-->
+<TABLE border=0 id="upperTable" style="border-color:blue; " width="340">
+<TR oncontextmenu='return false' ondragstart='return false' onselectstart ='return false' onselect='document.selection.empty()' oncopy='document.selection.empty()' onbeforecopy='return false' onmouseup='document.selection.empty()'>
+   <TD class="clicked" width="50%" >视频播放</TD>
+   <TD class="ttd" width="70%">图片播放</TD>
+</TR>
+</TABLE>
+<div class="panelUpper" style="display:block" id="upperLayer0">
+<object id="MediaPlayer1" width="300" height="200" ondblclick="return false" classid="CLSID:22D6F312-B0F6-11D0-94AB-0080C74C7E95"
+codebase="http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701"
+standby="Loading Microsoft® Windows® Media Player components..."
+type="application/x-oleobject" align="middle">
+<param name="FileName" value="0004.3gp">
+<param name="ShowStatusBar" value="True">
+<param name="DefaultFrame" value="mainFrame">
+<param name="autostart" value="false">
+<embed type="application/x-mplayer2" ondblclick="return false"
+pluginspage = "http://www.microsoft.com/Windows/MediaPlayer/"
+src="0004.3gp"
+autostart="false"
+align="middle"
+width="300"
+height="400"
+defaultframe="rightFrame"
+showstatusbar="true">
+</embed>
+</object>
+
+</div>
+<div class="panelUpper" style="display:none" id="upperLayer1">
+<img src="C:\Private\PrivateDocs\Project\Say520\repository\myrep\say520\Demo\images\temp-pic.jpg" width="320" height="230"/>
+
+
+
+</div>
+
+</DIV>
+</div>
+<div class="preload"><img src="短信许愿墙预览_files/u0_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u2_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u4_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u6_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u8_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u10_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u12_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u14_normal.png" width="1" height="1"/><img src="短信许愿墙预览_files/u19_normal.png" width="1" height="1"/></div>
+</body>
+<script src="resources/scripts/axurerp_pagescript.js"></script>
+<script src="短信许愿墙预览_files/axurerp_pagespecificscript.js" charset="utf-8"></script>
