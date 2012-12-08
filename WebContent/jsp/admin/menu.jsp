@@ -35,6 +35,31 @@
 				</li>
 			</s:else>
 
+			<s:if test="menuType == 'sendAll'">
+				<li class="current">
+					<a href="<%=path%>/queryAll.action" class="calendar"><span>群发管理</span>
+					</a>
+				</li>
+			</s:if>
+			<s:else>
+				<li>
+					<a href="<%=path%>/queryAll.action" class="calendar"><span>群发管理</span>
+					</a>
+				</li>
+			</s:else>
+			
+			<s:if test="menuType == 'msgTemplate'">
+				<li class="current">
+					<a href="<%=path%>/msgTemplate.action" class="users"><span>模板管理</span>
+					</a>
+				</li>
+			</s:if>
+			<s:else>
+			    <li>
+					<a href="<%=path%>/msgTemplate.action" class="users"><span>模板管理</span>
+					</a>
+				</li>
+			</s:else>
 
 			<s:if test="menuType == 'myAccount'">
 				<li class="current">
