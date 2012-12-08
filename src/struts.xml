@@ -308,6 +308,36 @@
 		
 	</package>
 	
+	<!-- Added By yang -->
+	<package name="sendAll" extends="struts-default">
+		<action name="queryAll" class="queryAllAction" method="planList">
+			<result name="success">/jsp/sendAll/planList.jsp</result>
+		</action>
+	</package>
+	
+	
+	<package name="msgTemplate" extends="struts-default">
+		<action name="msgTemplate" class="msgTemplateAction" method="findAllMsgTemplate">
+			<result name="success">/jsp/msgTemplate/templateList.jsp</result>
+		</action>
+		<action name="goNewTemplate" class="msgTemplateAction" method="addNewTemplate">
+			<result name="success">/jsp/msgTemplate/newTemplate.jsp</result>
+		</action>
+		<action name="saveMsgTemplate" class="msgTemplateAction" method="saveMsgTemplate">
+			<result name="success">/jsp/msgTemplate/updateTemplate.jsp</result>
+		</action>
+		<action name="getMsgTemplateById" class="msgTemplateAction" method="getMsgTemplateById">
+			<result name="success">/jsp/msgTemplate/updateTemplate.jsp</result>
+		</action>
+		<action name="deleteTemplates" class="msgTemplateAction" method="deleteTemplates">
+			<result name="success" type="redirect">msgTemplate</result>
+		</action>
+		
+	</package>
+	
+	<!-- Added By yang -->
+	
+	
 	<package name="stencil" extends="struts-default">
 		<action name="queryStencil" class="stencilAction" method="queryStencil">
 			<result name="success">/jsp/admin/stencilList.jsp</result>
