@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.wmp.msgTemplate.bean.MsgTemplate" table="msg_template">
+        <id name="tmpltId" type="java.lang.Integer" column="tmplt_id">
+          <generator class="increment"></generator>
+        </id>
+        <property name="tmpltTitle" type="string" column="tmplt_title" length="50"></property>
+        <property name="tmpltContent" type="string" column="tmplt_content" length="500"></property>
+        <property name="tmpltComment" type="string" column="tmplt_comment" length="50"></property>
+    </class>
+</hibernate-mapping>
