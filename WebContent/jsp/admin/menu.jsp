@@ -74,6 +74,19 @@
 				</li>
 			</s:else>
 			
+			<s:if test="menuType == 'sendMsg'">
+				<li class="current">
+					<a href="<%=path%>/sendMsg.action" class="users"><span>短信发送</span>
+					</a>
+				</li>
+			</s:if>
+			<s:else>
+			    <li>
+					<a href="<%=path%>/sendMsg.action" class="users"><span>短信发送</span>
+					</a>
+				</li>
+			</s:else>
+			
 		</ul>
 	</div>
 	<!--leftmenu-->

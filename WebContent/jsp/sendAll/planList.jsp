@@ -92,57 +92,20 @@ function goPage(pageNum)
           <s:form action="planList" method="post" theme="simple">
           <s:hidden name="page.indexPage" id="indexPage"></s:hidden>
             <div id="dyntable_length" class="dataTables_length">
-            
- 
-              <input type="button" class="stdbtn btn_yellow" style="width:80px;" value="新增婚礼"/>
-              <div style="float:right ">
- 
-             
-              婚礼关键字：<s:textfield name="queryActivity.title" cssStyle=" width:150px;"></s:textfield>
+婚礼关键字：<s:textfield name="queryActivity.title" cssStyle=" width:150px;"></s:textfield>
              &nbsp;&nbsp;
       婚礼日期：<s:textfield name="queryActivity.title" cssStyle=" width:80px;"></s:textfield>
              &nbsp;&nbsp;
   至：<s:textfield name="queryActivity.title" cssStyle=" width:80px;"></s:textfield>
               婚礼状态：
-<s:if test="queryActivity.status == 0">
               <select name="queryActivity.status" cssStyle=" width:150px;">
                 <option value="-1">所有状态</option>
                 <option value="2">进行中</option>
                 <option value="3">已结束</option>
               </select>
-</s:if>
-<s:elseif test="queryActivity.status == 1">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:elseif>
-<s:elseif test="queryActivity.status == 2">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2" selected>进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:elseif>
-<s:elseif test="queryActivity.status == 3">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3" selected>已结束</option>
-              </select>
-</s:elseif>
-<s:else>
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:else>
 
               &nbsp;&nbsp;&nbsp;&nbsp;
               <input type="button" value="搜索" class="stdbtn btn_yellow" style="width:80px;" onclick="doSearch()"/>
-              </div>
             </div>
           </s:form>
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable">

@@ -313,6 +313,15 @@
 		<action name="queryAll" class="queryAllAction" method="planList">
 			<result name="success">/jsp/sendAll/planList.jsp</result>
 		</action>
+		<action name="sendMsg" class="queryAllAction" method="sendMsg">
+			<result name="success">/jsp/sendAll/sendMsg.jsp</result>
+		</action>
+		<action name="getTemplateById" class="queryAllAction" method="getTemplateById">
+			<result name="success">/jsp/sendAll/sendMsg.jsp</result>
+		</action>
+		<action name="doSendMsg" class="queryAllAction" method="doSendMsg">
+			<result name="success">/jsp/sendAll/sendMsg.jsp</result>
+		</action>
 	</package>
 	
 	

@@ -451,6 +451,7 @@
 	<bean id="queryAllAction" class="com.wmp.sendAll.action.QueryAllAction"
 		scope="prototype">
 		<property name="planService" ref="planService"></property>
+		<property name="templateService" ref="templateService"></property>
 	</bean>
 	
 	<!-- 模板管理 -->
