@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-
+ <!--
  	<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
@@ -27,8 +27,10 @@
         <property name="minEvictableIdleTimeMillis" value="1800000"></property>
 
 	</bean>  
+	-->
+	
 		<!-- database.properties -->
- <!-- 	<bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+ 	<bean id="propertyConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
 				<value>classpath:database.properties</value>
@@ -40,7 +42,7 @@
 		<property name="url" value="${dataSource.url}" />
 		<property name="username" value="${dataSource.username}" />
 		<property name="password" value="${dataSource.password}" />
-	</bean>  -->
+	</bean>  
 	
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
@@ -73,6 +75,9 @@
 				<value>com/wmp/sms/bean/NamePoint.hbm.xml</value>
 				<value>com/wmp/common/bean/SysTelNumber.hbm.xml</value>
 				<value>com/wmp/common/bean/UploadPic.hbm.xml</value>
+				<!-- added by yang start -->
+				<value>com/wmp/msgTemplate/bean/MsgTemplate.hbm.xml</value>
+				<!-- added by yang end -->
 			</list>
 		</property>
 	</bean>
@@ -440,6 +445,27 @@
 			<value>0 30 3 * * ?</value>
 		</property>
 	</bean>
+	
+	<!-- added by yang start -->
+	<!-- 群发管理 -->
+	<bean id="queryAllAction" class="com.wmp.sendAll.action.QueryAllAction"
+		scope="prototype">
+		<property name="planService" ref="planService"></property>
+	</bean>
+	
+	<!-- 模板管理 -->
+	<bean id="msgTemplateAction" class="com.wmp.msgTemplate.action.TemplateAction"
+		scope="prototype">
+		<property name="templateService" ref="templateService"></property>
+	</bean>
+	<bean id="templateService"
+		class="com.wmp.msgTemplate.service.impl.TemplateServiceImpl"
+		scope="singleton">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- added by yang end -->
 	
 	<!-- 任务执行器配置 -->
 	<bean
