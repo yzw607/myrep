@@ -33,5 +33,7 @@
         <property name="sysTel" type="string" column="sys_tel" length="20"></property>
         <property name="status" type="string" column="status" length="10"></property>
         <property name="flag" type="string" column="flag" length="10"></property>
+        <property name="videoPath" type="string" column="video_path" length="50"></property>
+        <property name="picPath" type="string" column="pic_path" length="50"></property>
     </class>
 </hibernate-mapping>

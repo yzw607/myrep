@@ -85,6 +85,16 @@ public class PlanAction extends ActionSupport implements SessionAware, ServletRe
         return SUCCESS;
     }
     
+    public String delActivity() throws Exception
+    {
+        User user = (User)session.get(Common.USERINFO);
+        String ids = request.getParameter("ids");
+        this.planService.delActivityInfo(ids);
+        
+        numberList = this.planService.queryUserNumbers(user.getUserCode());
+        return SUCCESS;
+    }
+    
     public String delPic() throws Exception
     {
         User user = (User)session.get(Common.USERINFO);

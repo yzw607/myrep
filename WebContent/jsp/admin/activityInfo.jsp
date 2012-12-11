@@ -165,6 +165,18 @@ function doActivate()
       }
     }
   }
+  
+  if(document.getElementById("videoPath").value == "")
+  {
+    alert("请选择指定视频路径！");
+    return;
+  }
+  
+  if(document.getElementById("picPath").value == "")
+  {
+    alert("请选择滚动图片路径！");
+    return;
+  }
 
   if(window.confirm("是否确认该婚礼信息，确认后系统将减去您账户里相应的使用次数，且婚礼信息不能修改！"))
   {
@@ -357,7 +369,7 @@ function changeStatus()
 </s:else>
     </td>
   </tr>
-  <tr>
+  <!--  <tr>
     <td>祝福短号：</td>
     <td>
       <select name="activityInfo.number" id="number">
@@ -369,6 +381,14 @@ function changeStatus()
     </td>
     <td>设置滚动相片：</td>
     <td><input type="button" value="设置" onclick="setPic()"/></td>
+  </tr>-->
+  <tr>
+    <td>指定视频路径：</td>
+    <td>
+       <s:textfield name="activityInfo.videoPath" id="videoPath"  maxLength="50"/>
+    </td>
+    <td>指定滚动图片路径</td>
+    <td><s:textfield name="activityInfo.picPath" id="picPath"  maxLength="50"/></td>
   </tr>
   <tr>
     <td>欢迎致辞：</td>

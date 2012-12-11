@@ -40,8 +40,46 @@ public class ActivityInfo
     private String sysTelHTML2;
     private String periodStr;
     private String statusStr;
+    
+    private String startDate;
+    private String endDate;
+    
+    private String videoPath;
+    private String picPath;
+    
+    public String getVideoPath() {
+		return videoPath;
+	}
 
-    public String getStatusStr()
+	public void setVideoPath(String videoPath) {
+		this.videoPath = videoPath;
+	}
+
+	public String getPicPath() {
+		return picPath;
+	}
+
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getStatusStr()
     {
         if ("0".equals(status))
         {

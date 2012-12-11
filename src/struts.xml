@@ -119,7 +119,11 @@
 			<result name="success">/jsp/admin/newActivityInfo.jsp</result>
 		</action>
 		<action name="saveActivity" class="planAction" method="saveActivity">
-			<result name="success">/jsp/admin/activityInfo.jsp</result>
+			<result name="success" type="redirect">planList</result>
+		</action>
+		<action name="delActivity" class="planAction" method="delActivity">
+			<result name="success" type="redirect">planList</result>
+			<result name="error">/jsp/admin/info.jsp</result>
 		</action>
 		<action name="delPic" class="planAction" method="delPic">
 		    <result name="success">/jsp/admin/activityInfo.jsp</result>

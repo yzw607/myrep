@@ -32,7 +32,9 @@ String path = request.getContextPath();
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/general.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/dashboard.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.dataTables.min.js"></script>
-
+<script src="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/dhtmlxcalendar.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/dhtmlxcalendar.css"></link>
+<link rel="stylesheet" type="text/css" href="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/skins/dhtmlxcalendar_dhx_skyblue.css"></link>
 <script>
 function showActivity(id)
 {
@@ -50,6 +52,38 @@ function goPage(pageNum)
   document.getElementById("indexPage").value = pageNum;
   document.forms[0].submit();
 }
+var startDate;
+var endDate;
+function doOnLoad() 
+{
+	startDate = new dhtmlXCalendarObject(["startDate"]);
+	endDate = new dhtmlXCalendarObject(["endDate"]);
+}
+
+function selectAll(obj){
+   var array =[];
+   var ids = document.getElementsByName("checkbox");
+   if(obj.checked){
+	   for (var i = 0; i < ids.length; i++){
+		   ids[i].checked = true; 
+	   }
+   }else{
+	   for (var i = 0; i < ids.length; i++){
+		   ids[i].checked = false; 
+	   }
+   }
+}
+
+function delActivity(){
+	 var array =[];
+	 var ids = document.getElementsByName("checkbox");
+	 for (var i = 0; i < ids.length; i++){
+		   if(ids[i].checked){
+	       	  array.push(ids[i].value);
+		   }
+	 }
+	 window.location.href = "<%=path%>/delActivity.action?ids=" + array;
+}
 </script>
 
 <!--[if lt IE 9]>
@@ -57,7 +91,7 @@ function goPage(pageNum)
 <![endif]-->
 </head>
 
-<body class="loggedin">
+<body class="loggedin" onload="doOnLoad()">
 
 <jsp:include page="header.jsp" />
 
@@ -99,9 +133,9 @@ function goPage(pageNum)
              
               婚礼关键字：<s:textfield name="queryActivity.title" cssStyle=" width:150px;"></s:textfield>
              &nbsp;&nbsp;
-      婚礼日期：<s:textfield name="queryActivity.title" cssStyle=" width:80px;"></s:textfield>
+      婚礼日期：<s:textfield name="queryActivity.startDate" cssStyle=" width:80px;" id="startDate"></s:textfield>
              &nbsp;&nbsp;
-  至：<s:textfield name="queryActivity.title" cssStyle=" width:80px;"></s:textfield>
+  至：<s:textfield name="queryActivity.endDate" cssStyle=" width:80px;" id="endDate"></s:textfield>
               婚礼状态：
 <s:if test="queryActivity.status == 0">
               <select name="queryActivity.status" cssStyle=" width:150px;">
@@ -147,6 +181,8 @@ function goPage(pageNum)
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
               <thead>
                 <tr>
+                  <th class="head0"><input type="checkbox" onclick="selectAll(this)"/>全选&nbsp;&nbsp;<a href="javascript:void(0)"
+                   onclick="delActivity()">删除</a></th>
                   <th class="head0" rowspan="1" colspan="1">婚礼主题</th>
                   <th class="head1" rowspan="1" colspan="1">婚礼地址</th>
                   <th class="head0" rowspan="1" colspan="1">婚礼日期</th>
@@ -160,9 +196,9 @@ function goPage(pageNum)
               <tbody>
 
 <s:iterator value="#request.activityList" id="activity">
-
-                        <tr class="gradeX" onclick="showActivity('${activity.id}')">
-                            <td title="${activity.title}">${fn:substring(activity.title,0,21)}</td>
+                        <tr class="gradeX">
+                        	<td title="${activity.title}"><input type="checkbox" name="checkbox" value="${activity.id}"/></td>
+                            <td title="${activity.title}"><a href="javascript:void(0)" onclick="showActivity('${activity.id}')">${fn:substring(activity.title,0,21)}</a></td>
                             <td title="${activity.address}">${fn:substring(activity.address,0,21)}</td>
                             <td align="center">${activity.holdDate}</td>
                             <td>${activity.periodStr}</td>
@@ -175,6 +211,7 @@ function goPage(pageNum)
 
 <c:forEach begin="1" end="${emptyRow}" step="1">
 					   <tr>
+					   	   <td>&nbsp;</td>
 					       <td>&nbsp;</td>
 					       <td></td>
 					       <td></td>

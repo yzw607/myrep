@@ -34,4 +34,6 @@ public interface IPlanService
     public List<Object> doExport(int activityId) throws Exception;
     
     public String doOrderBack(User user, ActivityInfo inputActivityInfo) throws Exception;
+    
+    public void delActivityInfo(String ids) throws Exception;
 }

@@ -68,6 +68,12 @@ public class PlanServiceImpl extends HibernateDaoSupport implements IPlanService
             {
                 sb.append("and o.status = '").append(status.trim()).append("' ");
             }
+            if(queryActivity.getStartDate()!=null && !"".equals(queryActivity.getStartDate())){
+            	sb.append("and o.hold_Date >= '").append(queryActivity.getStartDate()).append("' ");
+            }
+            if(queryActivity.getEndDate()!=null && !"".equals(queryActivity.getEndDate())){
+            	sb.append("and o.hold_Date <= '").append(queryActivity.getEndDate()).append("' ");
+            }
         }
         
         List tmplist = this.getHibernateTemplate().getSessionFactory().getCurrentSession().createSQLQuery(sb.toString()).list();
@@ -150,6 +156,12 @@ public class PlanServiceImpl extends HibernateDaoSupport implements IPlanService
             if(null != status && !"".equals(status.trim()))
             {
                 sb.append("and o.status = '").append(status.trim()).append("' ");
+            }
+            if(queryActivity.getStartDate()!=null && !"".equals(queryActivity.getStartDate())){
+            	sb.append("and o.hold_Date >= '").append(queryActivity.getStartDate()).append("' ");
+            }
+            if(queryActivity.getEndDate()!=null && !"".equals(queryActivity.getEndDate())){
+            	sb.append("and o.hold_Date <= '").append(queryActivity.getEndDate()).append("' ");
             }
         }
         
@@ -317,6 +329,8 @@ public class PlanServiceImpl extends HibernateDaoSupport implements IPlanService
             String contextPath) throws Exception
     {
         activity.setStatus("0");
+        System.out.println("1111111111111111111111111111111: "+activity.getVideoPath());
+        System.out.println("1111111111111111111111111111111: "+activity.getPicPath());
         this.getHibernateTemplate().save(activity);
 
         String userCode = activity.getUserCode();
@@ -704,4 +718,26 @@ public class PlanServiceImpl extends HibernateDaoSupport implements IPlanService
 
         return tmplist;
     }
+
+	@Override
+	public void delActivityInfo(String ids) throws Exception {
+		StringBuffer sql = new StringBuffer();
+		sql.append("delete from ActivityInfo o where o.id in(");
+		int length = ids.split(",").length;
+		for(int i =0 ; i < length;i++){
+			if(i == length-1){
+				sql.append("?");
+			}else{
+				sql.append("?,");
+			}
+		}
+		sql.append(") and o.status = ?");
+		Query queryupdate=this.getHibernateTemplate().getSessionFactory()
+                .getCurrentSession().createQuery(sql.toString());
+		for(int i =0 ; i < length;i++){
+			queryupdate.setString(i, ids.split(",")[i]);
+		}
+		queryupdate.setString(length, "0");
+		queryupdate.executeUpdate();
+	}
 }
