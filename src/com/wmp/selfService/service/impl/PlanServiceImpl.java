@@ -206,7 +206,7 @@ public class PlanServiceImpl extends HibernateDaoSupport implements IPlanService
     {
         String msg = "";
         HibernateTemplate ht = this.getHibernateTemplate();
-        String hql = "FROM ActivityInfo o WHERE o.id = ? and o.status != 3";
+        String hql = "FROM ActivityInfo o WHERE o.id = ? and o.status != 2";
         List list = ht.find(hql, inputActivityInfo.getId());
         if (null == list || list.size() == 0)
         {
@@ -240,7 +240,8 @@ public class PlanServiceImpl extends HibernateDaoSupport implements IPlanService
         activity.setRemark(inputActivityInfo.getRemark());
         activity.setPostAddress(inputActivityInfo.getPostAddress());
         activity.setPicId(inputActivityInfo.getPicId());
-
+        activity.setVideoPath(inputActivityInfo.getVideoPath());
+        activity.setPicPath(inputActivityInfo.getPicPath());
         StringBuffer bgPath = new StringBuffer();
         if (null != file)
         {

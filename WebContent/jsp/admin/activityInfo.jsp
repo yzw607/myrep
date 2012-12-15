@@ -400,137 +400,14 @@ function changeStatus()
   </tr>
 </table>
 </s:if>
-<s:else>
-<table cellpadding="0" cellspacing="0" border="0" class="stdtable dashtable stdform" style=" width:98%; margin:10px; margin-top:0;  border-top:1px #ddd solid; ">
-  <colgroup>
-  <col class="con1" />
-  <col class="con0" />
-  <col class="con1" />
-  <col class="con0" />
-  </colgroup>
-
-  <tr>
-    <td width="120px;">婚礼关键字：</td>
-    <td width="380px;"><s:textfield name="activityInfo.title" id="title" maxLength="150" readonly="true"/></td>
-    <td width="120px;">婚礼地址：</td>
-    <td width="420px;"><s:textfield name="activityInfo.address" id="address"  maxLength="150" readonly="true"/></td>
-  </tr>  
-  <tr>
-    <td>婚礼日期：</td>
-    <td><input type="text" name="activityInfo.holdDate" id="holdDate" value="${activityInfo.holdDate}" readonly /></td>
-    <td>婚礼时段：</td>
-    <td>
-    <s:if test="activityInfo.period.indexOf('a')>=0">
-      <input type="checkbox" name="activityInfo.period" value="a" checked disabled/>
-    </s:if>
-    <s:else>
-      <input type="checkbox" name="activityInfo.period" value="a" disabled/>
-    </s:else>
-       <%=Common.PERIOD_A%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <s:if test="activityInfo.period.indexOf('b')>=0">
-      <input type="checkbox" name="activityInfo.period" value="b" checked disabled/>
-    </s:if>
-    <s:else>
-      <input type="checkbox" name="activityInfo.period" value="b" disabled/>
-    </s:else>
-       <%=Common.PERIOD_B%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-           <s:if test="activityInfo.period.indexOf('c')>=0">
-      <input type="checkbox" name="activityInfo.period" value="c" checked disabled/>
-    </s:if>
-    <s:else>
-      <input type="checkbox" name="activityInfo.period" value="c" disabled/>
-    </s:else>
-       <%=Common.PERIOD_C%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    </td>
-  </tr>
-  <tr>
-    <td>新郎：</td>
-    <td><s:textfield name="activityInfo.bridegroom" id="bridegroom"  maxLength="6" readonly="true"/></td>
-    <td>新郎电话：</td>
-    <td><s:textfield name="activityInfo.bridegroomTel" id="bridegroomTel"  maxLength="15" readonly="true"/></td>
-  </tr>
-  <tr>
-    <td>新娘：</td>
-    <td><s:textfield name="activityInfo.bride" id="bride"  maxLength="6" readonly="true"/></td>
-    <td>新娘电话：</td>
-    <td><s:textfield name="activityInfo.brideTel" id="brideTel"  maxLength="15" readonly="true"/></td>
-  </tr>
-  <tr>
-    <td>婚礼策划人：</td>
-    <td><s:textfield name="activityInfo.planners" id="planners"  maxLength="50" readonly="true"/></td>
-    <td>策划人电话：</td>
-    <td><s:textfield name="activityInfo.plannersTel" id="plannersTel"  maxLength="15" readonly="true"/></td>
-  </tr>
-  <tr>
-    <td>现场负责人：</td>
-    <td><s:textfield name="activityInfo.site" id="site" maxLength="50"  readonly="true"/></td>
-    <td>负责人电话：</td>
-    <td><s:textfield name="activityInfo.siteTel" id="siteTel"  maxLength="15" readonly="true"/></td>
-  </tr>
-  <tr>
-    <td>背景模版：</td>
-    <td>
-      <input type="text" id="tempStencilName" value="${activityInfo.stencilName}" style="cursor:hand" readonly onclick="selStencil()"//>
-      <s:hidden name="activityInfo.stencilId" id="stencilId" />
-      <s:hidden name="activityInfo.stencilName" id="stencilName" />
-    </td>
-    <td><span id="fileStr">背景上传：</span></td>
-    <td>
-<s:if test="activityInfo.picFileName != null && activityInfo.picFileName != ''">
-        <span id="fileArea">
-          ${activityInfo.picFileName}&nbsp;&nbsp; 
-        </span>
-</s:if>
-<s:else>
-        <span id="fileArea">未设置背景页面</span>
-</s:else>
-    </td>
-  </tr>
-  <tr>
-    <td>祝福短号：</td>
-    <td>
-      <select name="activityInfo.number" id="number" disabled="true">
-<s:iterator value="#request.numberList" id="userNumber">
-       <s:if test="activityInfo.number == #userNumber.number"><option value="${userNumber.number}" selected>${userNumber.number}</option></s:if>
-       <s:else><option value="${userNumber.number}">${userNumber.number}</option></s:else>
-</s:iterator>
-      </select>
-    </td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>欢迎致辞：</td>
-    <td colspan="3"><s:textfield name="activityInfo.welcomeMsg" id="site" maxLength="70" cssStyle="width:750px"  readonly="true"/></td>
-  </tr>
-  <tr>
-    <td>爱说语录投递地址：</td>
-    <td colspan="3"><s:textfield name="activityInfo.postAddress" id="postAddress"  maxLength="50" cssStyle="width:750px" readonly="true"/></td>
-  </tr>
-  
-<s:if test="activityInfo.status!= 3">  
-  <tr>
-    <td>无线祝福：</td>
-    <td>
-      <input type="text" value="http://www.say520.cn/woaishuo.action?hl=${activityInfo.id}" maxLength="50" readonly/>
-    </td>
-    <td colspan="2">分享给亲朋好友们，随时随地同步显示祝福短信</td>
-  </tr>
-</s:if>
-  
-</table>
-</s:else>
 
 
-<s:if test="#session.userinfo.userType != 'sys_admin'">
 
 <s:if test="activityInfo.status==0">
 <div style="margin:10px; float:left">
 
   <input type="button" id="registerBtn" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="保存" onclick="doUpdate()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="button" id="registerBtn" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="抢答设置" onclick="doSetting()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="button" id="registerBtn" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="抽奖设置" onclick="doSetting2()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="button" id="registerBtn" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="确认" onclick="doActivate()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="button" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="返回" onclick="goBack()"/>
     <br /><br />
 
@@ -550,7 +427,6 @@ function changeStatus()
 <s:if test="activityInfo.status==1">
 <div style="margin:10px; float:left">
 
-  <input type="button" id="registerBtn" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="退订" onclick="doOrderBack()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <input type="button" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="返回" onclick="goBack()"/>
       <br /><br />
 
@@ -570,6 +446,7 @@ function changeStatus()
 
 <s:if test="activityInfo.status==2">
 <div style="margin:10px; float:left">
+  <input type="button" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="短信导出" onclick="goBack()"/>
   <input type="button" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="返回" onclick="goBack()"/>
     <br /><br />
 
@@ -606,28 +483,6 @@ function changeStatus()
 </div>
 </s:if>
 
-</s:if>
-<s:else>
-
-<div style="margin:10px; float:left">
-
-调整状态：
-
-             <select name="activityInfo.status">
-                <option value="0">未确认</option>
-                <option value="1">已确认</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-
-  <input type="button" id="registerBtn" class="stdbtn btn_yellow" style="width:100px; height:35px;" value="确认" onclick="changeStatus()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    
-    
-    <br /><br />
-
-</div>
-
-</s:else>
 
 </s:form>
 </body>
