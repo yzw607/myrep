@@ -137,41 +137,12 @@ function delActivity(){
              &nbsp;&nbsp;
   至：<s:textfield name="queryActivity.endDate" cssStyle=" width:80px;" id="endDate"></s:textfield>
               婚礼状态：
-<s:if test="queryActivity.status == 0">
               <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
+                <option value="-1" <s:if test='queryActivity.status=="-1"'>selected</s:if>>全部</option>
+                <option value="0" <s:if test='queryActivity.status=="0"'>selected</s:if>>新创建</option>
+                <option value="1" <s:if test='queryActivity.status=="1"'>selected</s:if>>进行中</option>
+                <option value="2" <s:if test='queryActivity.status=="2"'>selected</s:if>>已结束</option>
               </select>
-</s:if>
-<s:elseif test="queryActivity.status == 1">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:elseif>
-<s:elseif test="queryActivity.status == 2">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2" selected>进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:elseif>
-<s:elseif test="queryActivity.status == 3">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3" selected>已结束</option>
-              </select>
-</s:elseif>
-<s:else>
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:else>
 
               &nbsp;&nbsp;&nbsp;&nbsp;
               <input type="button" value="搜索" class="stdbtn btn_yellow" style="width:80px;" onclick="doSearch()"/>
@@ -189,7 +160,6 @@ function delActivity(){
                   <th class="head1" rowspan="1" colspan="1">婚礼时段</th>
                   <th class="head0" rowspan="1" colspan="1">新郎</th>
                   <th class="head1" rowspan="1" colspan="1">新娘</th>
-                  <th class="head0" rowspan="1" colspan="1">祝福短号</th>
                   <th class="head1" rowspan="1" colspan="1">婚礼状态</th>
                 </tr>
               </thead>
@@ -204,7 +174,6 @@ function delActivity(){
                             <td>${activity.periodStr}</td>
                             <td align="center">${activity.bridegroom}</td>
                             <td align="center">${activity.bride}</td>
-                            <td align="center">${activity.number}</td>
                             <td align="center">${activity.statusStr}</td>
                         </tr>
 </s:iterator>
@@ -252,10 +221,14 @@ function delActivity(){
           
           <br clear="all" />
        婚礼状态说明：<br/>
-      未确认：我们会保存婚礼的所有信息，并等待您的确认，这种状态下，婚礼的所有信息可以随时修改，并且不会产生任何扣费；<br/>
-      已确认：您填写的婚礼信息将不能修改，确认后，我们会在您的账号中扣去相应的服务次数。建议您在临近婚礼举办日期前登录平台确认婚礼信息；<br/>
-      进行中：这场婚礼正在进行中，所有状态无法更改，您正在使用“我爱说”的服务；<br/>
-      已结束：这场婚礼成功使用了“我爱说”的服务。
+     
+
+新创建：这场婚礼已创建成功，婚礼的任何信息可以修改；<br/>
+
+进行中：这场婚礼正在进行中；<br/>
+
+已结束：这场婚礼已成功结束。
+
         </div>
         <!--content--> 
         

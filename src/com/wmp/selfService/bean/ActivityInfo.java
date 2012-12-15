@@ -83,15 +83,15 @@ public class ActivityInfo
     {
         if ("0".equals(status))
         {
-            statusStr = "未确认";
+            statusStr = "新创建";
         }
         else if ("1".equals(status))
         {
-            statusStr = "已确认";
+            statusStr = "进行中";
         }
         else if ("2".equals(status))
         {
-            statusStr = "进行中";
+            statusStr = "已结束";
         }
         else if ("3".equals(status))
         {

@@ -134,7 +134,7 @@
 			<result name="error">/jsp/admin/info.jsp</result>
 		</action>
 		<action name="updateActivity" class="planAction" method="updateActivity">
-			<result name="success">/jsp/admin/activityInfo.jsp</result>
+			<result name="success" type="redirect">planList</result>
 			<result name="input">/jsp/admin/picExceed.jsp</result>
 		</action>
 		<action name="doActivate" class="planAction" method="doActivate">
