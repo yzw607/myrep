@@ -14,7 +14,7 @@ public class SendMessage {
 	protected static final Logger logger = Logger.getLogger(SendMessage.class.getName());
 	
 	private final String SMS_ID = "modem.com17";
-	private final String SMS_PORT = "COM17";
+	private final String SMS_PORT = "COM16";
 	private final int SMS_BAUD_RATE = 115200;
 	private final String SMS_PROVIDER = "say520";
 	
