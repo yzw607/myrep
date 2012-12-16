@@ -2954,39 +2954,7 @@ div {
 
 .u173 {
     position:absolute;
-    left:605px;
-    top:154px;
-    width:49px;
-    height:16px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u174 {
-    position:absolute;
-    left:654px;
-    top:151px;
-    width:98px;
-    height:22px;
-    ;
-    ;
-    ;
-    font-family:'Arial';
-    font-size: 13px;
-    color:#000000;
-    font-style:normal;
-    font-weight:normal;
-    text-decoration:none;
-    
-}
-
-.u175 {
-    position:absolute;
-    left:762px;
+    left:603px;
     top:150px;
     width:50px;
     height:25px;
@@ -3002,11 +2970,11 @@ div {
     
 }
 
-.u176_normal {
-    background-image: url('../短信群发管理_files/u176_normal.png');
+.u174_normal {
+    background-image: url('../短信群发管理_files/u174_normal.png');
 }
 
-.u176_container {
+.u174_container {
     position:absolute;
     left:114px;
     top:24px;
@@ -3014,7 +2982,7 @@ div {
     height:55px;
 }
 
-#u176_img {
+#u174_img {
     position:absolute;
     left:0px;
     top:0px;
@@ -3022,7 +2990,7 @@ div {
     height:55px;
 }
 
-.u177 {
+.u175 {
     position:absolute;
     left:2px;
     top:20px;
@@ -3036,12 +3004,46 @@ div {
     word-wrap:break-word;
 }
 
-.u178 {
+.u176 {
     position:absolute;
     left:114px;
     top:607px;
     width:391px;
     height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u177_normal {
+    background-image: url('../短信群发管理_files/u177_normal.png');
+}
+
+.u177_container {
+    position:absolute;
+    left:114px;
+    top:516px;
+    width:644px;
+    height:80px;
+}
+
+#u177_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:650px;
+    height:86px;
+}
+
+.u178 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:640px;
+    height:64px;
     ;
     ;
     ;
@@ -3056,26 +3058,26 @@ div {
 
 .u179_container {
     position:absolute;
-    left:114px;
-    top:516px;
-    width:644px;
-    height:80px;
+    left:833px;
+    top:24px;
+    width:25px;
+    height:25px;
 }
 
 #u179_img {
     position:absolute;
-    left:-3px;
-    top:-3px;
-    width:650px;
-    height:86px;
+    left:0px;
+    top:0px;
+    width:25px;
+    height:25px;
 }
 
 .u180 {
     position:absolute;
     left:2px;
-    top:2px;
-    width:640px;
-    height:80px;
+    top:4px;
+    width:21px;
+    height:16px;
     ;
     ;
     ;
@@ -3090,7 +3092,7 @@ div {
 
 .u181_container {
     position:absolute;
-    left:833px;
+    left:900px;
     top:24px;
     width:25px;
     height:25px;
@@ -3124,7 +3126,7 @@ div {
 
 .u183_container {
     position:absolute;
-    left:900px;
+    left:960px;
     top:24px;
     width:25px;
     height:25px;
@@ -3152,31 +3154,11 @@ div {
     word-wrap:break-word;
 }
 
-.u185_normal {
-    background-image: url('../短信群发管理_files/u185_normal.png');
-}
-
-.u185_container {
-    position:absolute;
-    left:960px;
-    top:24px;
-    width:25px;
-    height:25px;
-}
-
-#u185_img {
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:25px;
-    height:25px;
-}
-
 .u186 {
     position:absolute;
-    left:2px;
-    top:4px;
-    width:21px;
+    left:16px;
+    top:0px;
+    width:1px;
     height:16px;
     ;
     ;
@@ -3313,20 +3295,6 @@ div {
 }
 
 .u206 {
-    position:absolute;
-    left:16px;
-    top:0px;
-    width:1px;
-    height:16px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u208 {
     position:absolute;
     left:16px;
     top:0px;
