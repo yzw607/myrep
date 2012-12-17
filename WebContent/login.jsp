@@ -16,9 +16,6 @@ String path = request.getContextPath();
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.flot.min.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.flot.resize.min.js"></script>
 <script type="text/javascript">
-/**
- * 
-
 $(document).ready(function(){
 	$('.loginform button').hover(function(){
 		$(this).stop().switchClass('default','hover');
@@ -58,32 +55,7 @@ $(document).ready(function(){
 		jQuery('.loginerror').slideUp();
 	});
 });
- */
 
-function login(){
-		//var u = jQuery(this).find('#username');
-		var u = document.getElementById("username");
-		var p = document.getElementById("password");
-		if(u.value == '') {
-			alert("用户名不能为空！");
-			//var logError = document.getElementById("loginerror");
-			//jQuery('.loginerror').slideDown();
-			//logError.slideDown();
-			//document.getElementById("loginerrorShow").innerHTML = "用户名不能为空！";
-			u.focus();
-			return false;	
-		}
-		if(p.value == '') {
-			alert("密码不能为空！");
-			//var logError = document.getElementById("loginerror");
-			//jQuery('.loginerror').slideDown();
-			//logError.slideDown();
-			//document.getElementById("loginerrorShow").innerHTML = "用户名不能为空！";
-			p.focus();
-			return false;	
-		}
-	 document.forms[0].submit();
-}
 
 </script>
 <!--[if lt IE 9]>
@@ -122,7 +94,7 @@ function login(){
                 </p>
                 
                 <br /> 
-                	<button class="stdbtn btn_blue" style="width:100px;" onclick="login();">登&nbsp;&nbsp;录</button>
+                    <input type="submit" class="stdbtn btn_blue" style="width:100px;; margin-left:80px;" value="登 录"/>
                     <input type="button" class="stdbtn btn_blue" style="width:100px;; margin-left:80px;" value="取 消"/>
             </form>       
         
