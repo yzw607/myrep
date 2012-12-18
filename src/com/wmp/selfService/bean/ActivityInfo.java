@@ -40,20 +40,58 @@ public class ActivityInfo
     private String sysTelHTML2;
     private String periodStr;
     private String statusStr;
+    
+    private String startDate;
+    private String endDate;
+    
+    private String videoPath;
+    private String picPath;
+    
+    public String getVideoPath() {
+		return videoPath;
+	}
 
-    public String getStatusStr()
+	public void setVideoPath(String videoPath) {
+		this.videoPath = videoPath;
+	}
+
+	public String getPicPath() {
+		return picPath;
+	}
+
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
+	public String getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(String startDate) {
+		this.startDate = startDate;
+	}
+
+	public String getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(String endDate) {
+		this.endDate = endDate;
+	}
+
+	public String getStatusStr()
     {
         if ("0".equals(status))
         {
-            statusStr = "未确认";
+            statusStr = "新创建";
         }
         else if ("1".equals(status))
         {
-            statusStr = "已确认";
+            statusStr = "进行中";
         }
         else if ("2".equals(status))
         {
-            statusStr = "进行中";
+            statusStr = "已结束";
         }
         else if ("3".equals(status))
         {

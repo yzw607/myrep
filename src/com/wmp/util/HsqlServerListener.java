@@ -46,7 +46,7 @@ public class HsqlServerListener implements ServletContextListener {
 		String classpath = Thread.currentThread().getContextClassLoader()
 				.getResource(".").getPath();
 		File file = new File(classpath);
-		String dbPath = arg0.getServletContext().getRealPath("/") + "WEB-INF\\db\\";
+		String dbPath = arg0.getServletContext().getRealPath("/") + "\\WEB-INF\\db\\";
 		String dbName = "mydb";
 		int port = 2011;
 		System.out.println();
