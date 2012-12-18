@@ -403,9 +403,14 @@
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="群发管理后续页_files/u161_normal.png");
 }
 
-* html .u172_normal {
+* html .u170_normal {
     background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="群发管理后续页_files/u172_normal.png");
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="群发管理后续页_files/u170_normal.png");
+}
+
+* html .u173_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="群发管理后续页_files/u173_normal.png");
 }
 
 * html .u175_normal {
@@ -421,10 +426,5 @@
 * html .u179_normal {
     background-image: none;
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="群发管理后续页_files/u179_normal.png");
-}
-
-* html .u181_normal {
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="群发管理后续页_files/u181_normal.png");
 }
 

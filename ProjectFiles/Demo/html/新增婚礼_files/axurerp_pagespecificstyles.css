@@ -1552,49 +1552,7 @@ div {
     
 }
 
-.u91 {
-    position:absolute;
-    left:16px;
-    top:0px;
-    width:84px;
-    height:15px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u93 {
-    position:absolute;
-    left:16px;
-    top:0px;
-    width:81px;
-    height:15px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u95 {
-    position:absolute;
-    left:16px;
-    top:0px;
-    width:86px;
-    height:15px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u96 {
+.u90 {
     position:absolute;
     left:114px;
     top:496px;
@@ -1612,7 +1570,7 @@ div {
     
 }
 
-.u97 {
+.u91 {
     position:absolute;
     left:260px;
     top:496px;
@@ -1630,11 +1588,11 @@ div {
     
 }
 
-.u98_normal {
-    background-image: url('../新增婚礼_files/u98_normal.png');
+.u92_normal {
+    background-image: url('../新增婚礼_files/u92_normal.png');
 }
 
-.u98_container {
+.u92_container {
     position:absolute;
     left:833px;
     top:24px;
@@ -1642,7 +1600,7 @@ div {
     height:25px;
 }
 
-#u98_img {
+#u92_img {
     position:absolute;
     left:0px;
     top:0px;
@@ -1650,7 +1608,7 @@ div {
     height:25px;
 }
 
-.u99 {
+.u93 {
     position:absolute;
     left:2px;
     top:4px;
@@ -1664,11 +1622,11 @@ div {
     word-wrap:break-word;
 }
 
-.u100_normal {
-    background-image: url('../新增婚礼_files/u100_normal.png');
+.u94_normal {
+    background-image: url('../新增婚礼_files/u94_normal.png');
 }
 
-.u100_container {
+.u94_container {
     position:absolute;
     left:900px;
     top:24px;
@@ -1676,7 +1634,7 @@ div {
     height:25px;
 }
 
-#u100_img {
+#u94_img {
     position:absolute;
     left:0px;
     top:0px;
@@ -1684,7 +1642,7 @@ div {
     height:25px;
 }
 
-.u101 {
+.u95 {
     position:absolute;
     left:2px;
     top:4px;
@@ -1698,11 +1656,11 @@ div {
     word-wrap:break-word;
 }
 
-.u102_normal {
-    background-image: url('../新增婚礼_files/u102_normal.png');
+.u96_normal {
+    background-image: url('../新增婚礼_files/u96_normal.png');
 }
 
-.u102_container {
+.u96_container {
     position:absolute;
     left:960px;
     top:24px;
@@ -1710,7 +1668,7 @@ div {
     height:25px;
 }
 
-#u102_img {
+#u96_img {
     position:absolute;
     left:0px;
     top:0px;
@@ -1718,7 +1676,7 @@ div {
     height:25px;
 }
 
-.u103 {
+.u97 {
     position:absolute;
     left:2px;
     top:4px;
@@ -1732,7 +1690,7 @@ div {
     word-wrap:break-word;
 }
 
-.u104 {
+.u98 {
     position:absolute;
     left:274px;
     top:383px;
@@ -1750,7 +1708,7 @@ div {
     
 }
 
-.u105 {
+.u99 {
     position:absolute;
     left:724px;
     top:383px;
@@ -1759,6 +1717,42 @@ div {
     ;
     ;
     text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u100 {
+    position:absolute;
+    left:731px;
+    top:174px;
+    width:195px;
+    height:25px;
+    ;
+    ;
+    text-align: left;;
+    font-family:'Arial';
+    font-size: 13px;
+    color:#000000;
+    font-style:normal;
+    font-weight:normal;
+    text-decoration:none;
+    
+}
+
+.u101 {
+    position:absolute;
+    left:926px;
+    top:174px;
+    width:110px;
+    height:25px;
+    ;
+    ;
+    text-align: center;;
     font-family:'Arial';
     font-size: 13px;
     color:#000000;

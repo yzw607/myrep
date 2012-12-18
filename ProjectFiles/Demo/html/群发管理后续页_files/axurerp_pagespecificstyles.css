@@ -2882,39 +2882,7 @@ div {
 
 .u169 {
     position:absolute;
-    left:608px;
-    top:154px;
-    width:49px;
-    height:16px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u170 {
-    position:absolute;
-    left:653px;
-    top:151px;
-    width:98px;
-    height:22px;
-    ;
-    ;
-    ;
-    font-family:'Arial';
-    font-size: 13px;
-    color:#000000;
-    font-style:normal;
-    font-weight:normal;
-    text-decoration:none;
-    
-}
-
-.u171 {
-    position:absolute;
-    left:764px;
+    left:621px;
     top:151px;
     width:50px;
     height:25px;
@@ -2930,11 +2898,11 @@ div {
     
 }
 
-.u172_normal {
-    background-image: url('../群发管理后续页_files/u172_normal.png');
+.u170_normal {
+    background-image: url('../群发管理后续页_files/u170_normal.png');
 }
 
-.u172_container {
+.u170_container {
     position:absolute;
     left:114px;
     top:24px;
@@ -2942,7 +2910,7 @@ div {
     height:55px;
 }
 
-#u172_img {
+#u170_img {
     position:absolute;
     left:0px;
     top:0px;
@@ -2950,7 +2918,7 @@ div {
     height:55px;
 }
 
-.u173 {
+.u171 {
     position:absolute;
     left:2px;
     top:20px;
@@ -2964,12 +2932,46 @@ div {
     word-wrap:break-word;
 }
 
-.u174 {
+.u172 {
     position:absolute;
     left:114px;
     top:591px;
     width:391px;
     height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+
+.u173_normal {
+    background-image: url('../群发管理后续页_files/u173_normal.png');
+}
+
+.u173_container {
+    position:absolute;
+    left:114px;
+    top:500px;
+    width:644px;
+    height:80px;
+}
+
+#u173_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:650px;
+    height:86px;
+}
+
+.u174 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:640px;
+    height:80px;
     ;
     ;
     ;
@@ -2984,26 +2986,26 @@ div {
 
 .u175_container {
     position:absolute;
-    left:114px;
-    top:500px;
-    width:644px;
-    height:80px;
+    left:833px;
+    top:24px;
+    width:25px;
+    height:25px;
 }
 
 #u175_img {
     position:absolute;
-    left:-3px;
-    top:-3px;
-    width:650px;
-    height:86px;
+    left:0px;
+    top:0px;
+    width:25px;
+    height:25px;
 }
 
 .u176 {
     position:absolute;
     left:2px;
-    top:2px;
-    width:640px;
-    height:80px;
+    top:4px;
+    width:21px;
+    height:16px;
     ;
     ;
     ;
@@ -3018,7 +3020,7 @@ div {
 
 .u177_container {
     position:absolute;
-    left:833px;
+    left:900px;
     top:24px;
     width:25px;
     height:25px;
@@ -3052,7 +3054,7 @@ div {
 
 .u179_container {
     position:absolute;
-    left:900px;
+    left:960px;
     top:24px;
     width:25px;
     height:25px;
@@ -3080,41 +3082,7 @@ div {
     word-wrap:break-word;
 }
 
-.u181_normal {
-    background-image: url('../群发管理后续页_files/u181_normal.png');
-}
-
-.u181_container {
-    position:absolute;
-    left:960px;
-    top:24px;
-    width:25px;
-    height:25px;
-}
-
-#u181_img {
-    position:absolute;
-    left:0px;
-    top:0px;
-    width:25px;
-    height:25px;
-}
-
-.u182 {
-    position:absolute;
-    left:2px;
-    top:4px;
-    width:21px;
-    height:16px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u183 {
+.u181 {
     position:absolute;
     left:635px;
     top:461px;
@@ -3132,7 +3100,7 @@ div {
     
 }
 
-.u184 {
+.u182 {
     position:absolute;
     left:813px;
     top:461px;
@@ -3150,7 +3118,7 @@ div {
     
 }
 
-.u185 {
+.u183 {
     position:absolute;
     left:692px;
     top:461px;
@@ -3168,7 +3136,7 @@ div {
     
 }
 
-.u186 {
+.u184 {
     position:absolute;
     left:756px;
     top:461px;
@@ -3184,6 +3152,20 @@ div {
     font-weight:normal;
     text-decoration:none;
     
+}
+
+.u186 {
+    position:absolute;
+    left:16px;
+    top:0px;
+    width:1px;
+    height:16px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
 }
 
 .u188 {
@@ -3243,20 +3225,6 @@ div {
 }
 
 .u196 {
-    position:absolute;
-    left:16px;
-    top:0px;
-    width:1px;
-    height:16px;
-    ;
-    ;
-    ;
-    font-family:Arial;
-    text-align:left;
-    word-wrap:break-word;
-}
-
-.u198 {
     position:absolute;
     left:16px;
     top:0px;

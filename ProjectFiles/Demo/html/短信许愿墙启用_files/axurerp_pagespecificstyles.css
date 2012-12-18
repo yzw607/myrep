@@ -294,3 +294,37 @@ div {
     word-wrap:break-word;
 }
 
+.u17_normal {
+    background-image: url('../短信许愿墙启用_files/u17_normal.png');
+}
+
+.u17_container {
+    position:absolute;
+    left:118px;
+    top:619px;
+    width:637px;
+    height:208px;
+}
+
+#u17_img {
+    position:absolute;
+    left:-3px;
+    top:-3px;
+    width:643px;
+    height:214px;
+}
+
+.u18 {
+    position:absolute;
+    left:2px;
+    top:2px;
+    width:633px;
+    height:95px;
+    ;
+    ;
+    ;
+    font-family:Arial;
+    text-align:left;
+    word-wrap:break-word;
+}
+

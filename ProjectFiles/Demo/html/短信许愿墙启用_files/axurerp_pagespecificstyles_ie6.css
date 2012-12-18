@@ -38,3 +38,8 @@
     filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="短信许愿墙启用_files/u12_normal.png");
 }
 
+* html .u17_normal {
+    background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="短信许愿墙启用_files/u17_normal.png");
+}
+
