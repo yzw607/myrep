@@ -350,6 +350,11 @@
 	
 	<!-- Added By yang -->
 	
+	<package name="preview" extends="struts-default">
+		<action name="picslider" class="previewAction" method="picList">
+			<result name="success">/jsp/admin/picslider.jsp</result>
+		</action>
+	</package>
 	
 	<package name="stencil" extends="struts-default">
 		<action name="queryStencil" class="stencilAction" method="queryStencil">

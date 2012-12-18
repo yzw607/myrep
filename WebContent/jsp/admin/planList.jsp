@@ -38,7 +38,7 @@ String path = request.getContextPath();
 <script>
 function showActivity(id)
 {
-  window.location.href = "<%=path%>/viewActivity.action?activityInfo.id=" + id;
+  window.location.href = "<%=path%>/picslider.action?id=" + id;
 }
 
 function doSearch()
@@ -111,13 +111,13 @@ function delActivity(){
     <div class="maincontent noright">
       <div class="maincontentinner">
         <ul class="maintabmenu">
-          <li class="current"><a href="#">婚礼管理</a></li>
+          <li class="current"><a href="#">活动管理</a></li>
         </ul>
         <!--maintabmenu-->
         
         <div class="content">
           <div class="contenttitle radiusbottom0">
-            <h2 class="table"><span>婚礼列表</span></h2>
+            <h2 class="table"><span>活动列表</span></h2>
           </div>
           <!--contenttitle-->
           <div class="dataTables_wrapper" id="dyntable_wrapper">
@@ -127,16 +127,16 @@ function delActivity(){
             <div id="dyntable_length" class="dataTables_length">
             
  
-              <input type="button" class="stdbtn btn_yellow" style="width:80px;" value="新增婚礼" onclick="javascript:window.location.href='<%=path%>/goNewActivity.action';"/>
+              <input type="button" class="stdbtn btn_yellow" style="width:80px;" value="新增活动" onclick="javascript:window.location.href='<%=path%>/goNewActivity.action';"/>
               <div style="float:right ">
  
              
-              婚礼关键字：<s:textfield name="queryActivity.title" cssStyle=" width:150px;"></s:textfield>
+              活动主题：<s:textfield name="queryActivity.title" cssStyle=" width:150px;"></s:textfield>
              &nbsp;&nbsp;
-      婚礼日期：<s:textfield name="queryActivity.startDate" cssStyle=" width:80px;" id="startDate"></s:textfield>
+      活动日期：<s:textfield name="queryActivity.startDate" cssStyle=" width:80px;" id="startDate"></s:textfield>
              &nbsp;&nbsp;
   至：<s:textfield name="queryActivity.endDate" cssStyle=" width:80px;" id="endDate"></s:textfield>
-              婚礼状态：
+              活动状态：
               <select name="queryActivity.status" cssStyle=" width:150px;">
                 <option value="-1" <s:if test='queryActivity.status=="-1"'>selected</s:if>>全部</option>
                 <option value="0" <s:if test='queryActivity.status=="0"'>selected</s:if>>新创建</option>
@@ -154,13 +154,11 @@ function delActivity(){
                 <tr>
                   <th class="head0"><input type="checkbox" onclick="selectAll(this)"/>全选&nbsp;&nbsp;<a href="javascript:void(0)"
                    onclick="delActivity()">删除</a></th>
-                  <th class="head0" rowspan="1" colspan="1">婚礼主题</th>
-                  <th class="head1" rowspan="1" colspan="1">婚礼地址</th>
-                  <th class="head0" rowspan="1" colspan="1">婚礼日期</th>
-                  <th class="head1" rowspan="1" colspan="1">婚礼时段</th>
-                  <th class="head0" rowspan="1" colspan="1">新郎</th>
-                  <th class="head1" rowspan="1" colspan="1">新娘</th>
-                  <th class="head1" rowspan="1" colspan="1">婚礼状态</th>
+                  <th class="head0" rowspan="1" colspan="1">活动主题</th>
+                  <th class="head1" rowspan="1" colspan="1">活动地址</th>
+                  <th class="head1" rowspan="1" colspan="1">活动短号</th>
+                  <th class="head0" rowspan="1" colspan="1">活动日期</th>
+                  <th class="head1" rowspan="1" colspan="1">活动状态</th>
                 </tr>
               </thead>
               <tbody>
@@ -170,10 +168,8 @@ function delActivity(){
                         	<td title="${activity.title}"><input type="checkbox" name="checkbox" value="${activity.id}"/></td>
                             <td title="${activity.title}"><a href="javascript:void(0)" onclick="showActivity('${activity.id}')">${fn:substring(activity.title,0,21)}</a></td>
                             <td title="${activity.address}">${fn:substring(activity.address,0,21)}</td>
+                            <td align="center">${activity.number}</td>
                             <td align="center">${activity.holdDate}</td>
-                            <td>${activity.periodStr}</td>
-                            <td align="center">${activity.bridegroom}</td>
-                            <td align="center">${activity.bride}</td>
                             <td align="center">${activity.statusStr}</td>
                         </tr>
 </s:iterator>
@@ -182,9 +178,6 @@ function delActivity(){
 					   <tr>
 					   	   <td>&nbsp;</td>
 					       <td>&nbsp;</td>
-					       <td></td>
-					       <td></td>
-					       <td></td>
 					       <td></td>
 					       <td></td>
 					       <td></td>
@@ -220,14 +213,14 @@ function delActivity(){
           
           
           <br clear="all" />
-       婚礼状态说明：<br/>
+       活动状态说明：<br/>
      
 
-新创建：这场婚礼已创建成功，婚礼的任何信息可以修改；<br/>
+新创建：这场活动已创建成功，活动的任何信息可以修改；<br/>
 
-进行中：这场婚礼正在进行中；<br/>
+进行中：这场活动正在进行中；<br/>
 
-已结束：这场婚礼已成功结束。
+已结束：这场活动已成功结束。
 
         </div>
         <!--content--> 

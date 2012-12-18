@@ -27,9 +27,7 @@ User user = (User)session.getAttribute(Common.USERINFO);
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery-1.7.min.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/general.js"></script>
-<script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/generalnew.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/tables.js"></script>
-<script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/form.js"></script>
 <script type="text/javascript" src="<%=path%>/scripts/ajax.js"></script>
 <script>
 function chooseNumber(numberId, number)

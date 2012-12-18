@@ -46,7 +46,7 @@ function doOnLoad()
 function doSave()
 {
   var number = document.getElementById("number");
-  /*if(number.options.length == 0)
+  /**if(number.value== "")
   {
     if(window.confirm("您还没有祝福短号，请先至【祝福短号】页面维护您的短号！\n是否前往【祝福短号】页面？"))
     {
@@ -61,22 +61,8 @@ function doSave()
   
   if(document.getElementById("title").value == "")
   {
-    alert("请输入婚礼关键字！");
+    alert("请输入活动主题！");
     document.getElementById("title").focus();
-    return;
-  }
-  
-  if(document.getElementById("bridegroom").value == "")
-  {
-    alert("请输入新郎名字！");
-    document.getElementById("bridegroom").focus();
-    return;
-  }
-  
-  if(document.getElementById("bride").value == "")
-  {
-    alert("请输入新娘名字！");
-    document.getElementById("bride").focus();
     return;
   }
   
@@ -114,7 +100,7 @@ function doSave()
 
 function goQuestions()
 {
-  alert("请先保存该婚礼信息！");
+  alert("请先保存该活动信息！");
 }
 
 function selBG(obj)
@@ -153,7 +139,7 @@ function selStencil()
     
 <s:form action="saveActivity" method="post" theme="simple" enctype ="multipart/form-data">
 <div class="contenttitle radiusbottom0" style="margin:10px;">
-  <h2 class="table"><span>新增婚礼</span></h2>
+  <h2 class="table"><span>新增活动</span></h2>
 </div>
 
 <table cellpadding="0" cellspacing="0" border="0" class="stdtable dashtable stdform" style=" width:98%; margin:10px; margin-top:0; border-top:1px #ddd solid; ">
@@ -165,22 +151,21 @@ function selStencil()
   </colgroup>
 
   <tr>
-    <td width="120px;">婚礼关键字：</td>
+    <td width="120px;">活动主题：</td>
     <td width="380px;"><s:textfield name="activityInfo.title" id="title" maxLength="150"/></td>
-    <td width="120px;">婚礼地点：</td>
+    <td width="120px;">活动地点：</td>
     <td width="420px;"><s:textfield name="activityInfo.address" id="address"  maxLength="150"/></td>
   </tr>   
   <tr>
-    <td>婚礼日期：</td>
+    <td>活动日期：</td>
     <td><input type="text" name="activityInfo.holdDate" id="holdDate" value="<s:date name="activityInfo.holdDate" format="yyyy-MM-dd"/>" readonly /></td>
-    <td>婚礼时段：</td>
+    <td>活动短号：</td>
     <td>
-      <input type="checkbox" name="activityInfo.period" value="a"/> <%=Common.PERIOD_A%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="checkbox" name="activityInfo.period" value="b"/> <%=Common.PERIOD_B%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="checkbox" name="activityInfo.period" value="c"/> <%=Common.PERIOD_C%>
+    <s:textfield name="activityInfo.number" id="number"  maxLength="10" readOnly="readOnly"/>
+     <input type="button" value="祝福短号选择" class="stdbtn btn_yellow" style="width:100px; height:35px;" onclick="window.location.href='<%=path%>/queryNumber.action'"/>
     </td>
   </tr>
-  <tr>
+<%--   <tr>
     <td>新郎：</td>
     <td><s:textfield name="activityInfo.bridegroom" id="bridegroom"  maxLength="6"/></td>
     <td>新郎电话：</td>
@@ -197,11 +182,11 @@ function selStencil()
     <td><s:textfield name="activityInfo.planners" id="planners"  maxLength="50"/></td>
     <td>策划人电话：</td>
     <td><s:textfield name="activityInfo.plannersTel" id="plannersTel"  maxLength="15"/></td>
-  </tr>
+  </tr> --%>
   <tr>
-    <td>现场负责人：</td>
+    <td>客户联系人：</td>
     <td><s:textfield name="activityInfo.site" id="site" maxLength="50" /></td>
-    <td>负责人电话：</td>
+    <td>联系人电话：</td>
     <td><s:textfield name="activityInfo.siteTel" id="siteTel"  maxLength="15"/></td>
   </tr>
   <tr>
@@ -238,10 +223,10 @@ function selStencil()
     <td>欢迎致辞：</td>
     <td colspan="3"><s:textfield name="activityInfo.welcomeMsg" id="site" maxLength="70" cssStyle="width:750px"/></td>
   </tr>
-  <tr>
+ <%--  <tr>
     <td>爱说语录投递地址：</td>
     <td colspan="3"><s:textfield name="activityInfo.postAddress" id="postAddress"  maxLength="50" cssStyle="width:750px"/></td>
-  </tr>
+  </tr> --%>
 </table>
 
 <br/><br/>

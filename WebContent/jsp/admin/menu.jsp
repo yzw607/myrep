@@ -24,13 +24,13 @@
 
 			<s:if test="menuType == 'weddingManage'">
 				<li class="current">
-					<a href="<%=path%>/planList.action" class="elements"><span>婚礼管理</span>
+					<a href="<%=path%>/planList.action" class="elements"><span>活动管理</span>
 					</a>
 				</li>
 			</s:if>
 			<s:else>
 				<li>
-					<a href="<%=path%>/planList.action" class="elements"><span>婚礼管理</span>
+					<a href="<%=path%>/planList.action" class="elements"><span>活动管理</span>
 					</a>
 				</li>
 			</s:else>
