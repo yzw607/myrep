@@ -21,7 +21,7 @@ import org.smslib.modem.SerialModemGateway;
 public class ReadMessages {  
 	
 	private final String SMS_ID = "modem.com17";
-	private final String SMS_PORT = "COM17";
+	private final String SMS_PORT = "COM16";
 	private final int SMS_BAUD_RATE = 115200;
 	private final String SMS_PROVIDER = "say520";
     public static Service srv = Service.getInstance();  
@@ -32,12 +32,13 @@ public class ReadMessages {
         CallNotification callNotification = new CallNotification();  
         GatewayStatusNotification statusNotification = new GatewayStatusNotification();  
         OrphanedMessageNotification orphanedMessageNotification = new OrphanedMessageNotification();  
+        System.out.println("Example: Read messages from a serial gsm modem.");  
+        System.out.println(Library.getLibraryDescription());  
+        System.out.println("Version: " + Library.getLibraryVersion());  
+//        SerialModemGateway gateway = new SerialModemGateway("modem.com3", "COM3", 115200, null, null);
+        SerialModemGateway gateway = new SerialModemGateway(SMS_ID, SMS_PORT, SMS_BAUD_RATE, SMS_PROVIDER, null);
+
         try {  
-            System.out.println("Example: Read messages from a serial gsm modem.");  
-            System.out.println(Library.getLibraryDescription());  
-            System.out.println("Version: " + Library.getLibraryVersion());  
-//            SerialModemGateway gateway = new SerialModemGateway("modem.com3", "COM3", 115200, null, null);
-            SerialModemGateway gateway = new SerialModemGateway(SMS_ID, SMS_PORT, SMS_BAUD_RATE, SMS_PROVIDER, null);
             gateway.setProtocol(Protocols.PDU);  
             gateway.setInbound(true);  
             gateway.setOutbound(true);  
@@ -54,12 +55,16 @@ public class ReadMessages {
             System.out.println(" Serial No: " + gateway.getSerialNo());  
             System.out.println(" SIM IMSI: " + gateway.getImsi());  
             System.out.println(" Signal Level: " + gateway.getSignalLevel() + "%");  
-            System.out.println(" Battery Level: " + gateway.getBatteryLevel() + "%");  
+            System.out.println(" Battery Level: " + gateway.getBatteryLevel() + "%");
+            System.out.println(" Sim Pin1: " + gateway.getImsi() + gateway.getSimPin2() + gateway.getSmscNumber() + "%");
+            
             System.out.println();  
 //            srv.getKeyManager().registerKey("+8613808080808", new AESKey(new SecretKeySpec("0011223344556677".getBytes(), "AES")));  
             msgList = new ArrayList<InboundMessage>();  
-            srv.readMessages(msgList, MessageClasses.ALL);  
+            srv.readMessages(msgList, MessageClasses.ALL);
+            System.out.println("一共有" + msgList.size() + "条短信！");  
             for (InboundMessage msg : msgList) {  
+//            	System.out.println(msg.getOriginator());
                 System.out.println(msg);  
 //              srv.deleteMessage(msg);     //删除短信  
             }  
@@ -68,7 +73,16 @@ public class ReadMessages {
             System.in.read();  
         } catch (Exception e) {  
             e.printStackTrace();  
-        }  
+        }  finally{
+        	try {
+                srv.stopService();  
+                srv.removeGateway(gateway);  
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();  
+			}
+        }
+        
     }  
   
     public class InboundNotification implements IInboundMessageNotification {  

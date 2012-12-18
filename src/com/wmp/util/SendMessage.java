@@ -50,11 +50,18 @@ public class SendMessage {
                 msg.setEncoding(MessageEncodings.ENCUCS2); // 中文  
                 srv.sendMessage(msg);  
             }  
-            srv.stopService();  
-                        srv.removeGateway(gateway);  
+
         } catch (Exception e) {  
             e.printStackTrace();  
-        }  
+        } finally{
+        	try {
+                srv.stopService();  
+                srv.removeGateway(gateway);  
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();  
+			}
+        }
     }  
   
     public static void main(String[] args) throws GatewayException {  
