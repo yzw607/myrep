@@ -46,7 +46,7 @@ function doOnLoad()
 function doSave()
 {
   var number = document.getElementById("number");
-  if(number.options.length == 0)
+  /*if(number.options.length == 0)
   {
     if(window.confirm("您还没有祝福短号，请先至【祝福短号】页面维护您的短号！\n是否前往【祝福短号】页面？"))
     {
@@ -57,7 +57,7 @@ function doSave()
     {
       return;
     }
-  }
+  }*/
   
   if(document.getElementById("title").value == "")
   {
@@ -98,6 +98,17 @@ function doSave()
     }
   }
   
+  if(document.getElementById("videoPath").value == "")
+  {
+    alert("请选择指定视频路径！");
+    return;
+  }
+  
+  if(document.getElementById("picPath").value == "")
+  {
+    alert("请选择滚动图片路径！");
+    return;
+  }
   document.forms[0].submit();
 }
 
@@ -203,7 +214,7 @@ function selStencil()
     <td><span id="fileStr">背景上传：</span></td>
     <td><span id="fileArea"><s:file name="file" id="file"/><br/><font color="red">文件大小：不大于2M，分辨率：1024*768，图片格式：JPG</font></span></td>
   </tr>
-  <tr>
+  <!--  <tr>
     <td>祝福短号：</td>
     <td>
       <select name="activityInfo.number" id="number">
@@ -214,6 +225,14 @@ function selStencil()
     </td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
+  </tr>-->
+  <tr>
+    <td>指定视频路径：</td>
+    <td>
+       <s:textfield name="activityInfo.videoPath" id="videoPath"  maxLength="50"/>
+    </td>
+    <td>指定滚动图片路径</td>
+    <td><s:textfield name="activityInfo.picPath" id="picPath"  maxLength="50"/></td>
   </tr>
   <tr>
     <td>欢迎致辞：</td>

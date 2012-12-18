@@ -94,7 +94,7 @@ $(document).ready(function(){
                 </p>
                 
                 <br /> 
-                	<button class="stdbtn btn_blue" style="width:100px;">登&nbsp;&nbsp;录</button>
+                    <input type="submit" class="stdbtn btn_blue" style="width:100px;; margin-left:80px;" value="登 录"/>
                     <input type="button" class="stdbtn btn_blue" style="width:100px;; margin-left:80px;" value="取 消"/>
             </form>       
         

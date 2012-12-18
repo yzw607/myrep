@@ -70,7 +70,8 @@ function userAgent()
   }   
 
   userAgent();   
-  if(!flag)
+  //if(!flag)
+   if(0 > 1)
   {
     window.location.href="<%=path%>/prompt.jsp";
   }

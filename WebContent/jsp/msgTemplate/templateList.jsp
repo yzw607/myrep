@@ -147,7 +147,7 @@ function deleteSelectedTemplates(){
                 <tr>
                   <th class="head1" rowspan="1" width="10%" colspan="1">
                    <input type="checkbox" id="selectAll" style="width: 20px;" name="selectAll" onclick="selectAll();"/>全选<br />
-                   <a href="#" onclick="deleteSelectedTemplates();">删除</a></th>
+                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="deleteSelectedTemplates();">删除</a></th>
                   <th class="head1" rowspan="1" width="25%" colspan="1">模板主题</th>
                   <th class="head1" rowspan="1" width="40%" colspan="1">模板内容</th>
                   <th class="head0" rowspan="1" width="25%" colspan="1">模板说明</th>

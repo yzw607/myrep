@@ -32,7 +32,9 @@ String path = request.getContextPath();
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/general.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/dashboard.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.dataTables.min.js"></script>
-
+<script src="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/dhtmlxcalendar.js"></script>
+<link rel="stylesheet" type="text/css" href="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/dhtmlxcalendar.css"></link>
+<link rel="stylesheet" type="text/css" href="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/skins/dhtmlxcalendar_dhx_skyblue.css"></link>
 <script>
 function showActivity(id)
 {
@@ -50,6 +52,38 @@ function goPage(pageNum)
   document.getElementById("indexPage").value = pageNum;
   document.forms[0].submit();
 }
+var startDate;
+var endDate;
+function doOnLoad() 
+{
+	startDate = new dhtmlXCalendarObject(["startDate"]);
+	endDate = new dhtmlXCalendarObject(["endDate"]);
+}
+
+function selectAll(obj){
+   var array =[];
+   var ids = document.getElementsByName("checkbox");
+   if(obj.checked){
+	   for (var i = 0; i < ids.length; i++){
+		   ids[i].checked = true; 
+	   }
+   }else{
+	   for (var i = 0; i < ids.length; i++){
+		   ids[i].checked = false; 
+	   }
+   }
+}
+
+function delActivity(){
+	 var array =[];
+	 var ids = document.getElementsByName("checkbox");
+	 for (var i = 0; i < ids.length; i++){
+		   if(ids[i].checked){
+	       	  array.push(ids[i].value);
+		   }
+	 }
+	 window.location.href = "<%=path%>/delActivity.action?ids=" + array;
+}
 </script>
 
 <!--[if lt IE 9]>
@@ -57,7 +91,7 @@ function goPage(pageNum)
 <![endif]-->
 </head>
 
-<body class="loggedin">
+<body class="loggedin" onload="doOnLoad()">
 
 <jsp:include page="header.jsp" />
 
@@ -99,45 +133,16 @@ function goPage(pageNum)
              
               婚礼关键字：<s:textfield name="queryActivity.title" cssStyle=" width:150px;"></s:textfield>
              &nbsp;&nbsp;
-      婚礼日期：<s:textfield name="queryActivity.title" cssStyle=" width:80px;"></s:textfield>
+      婚礼日期：<s:textfield name="queryActivity.startDate" cssStyle=" width:80px;" id="startDate"></s:textfield>
              &nbsp;&nbsp;
-  至：<s:textfield name="queryActivity.title" cssStyle=" width:80px;"></s:textfield>
+  至：<s:textfield name="queryActivity.endDate" cssStyle=" width:80px;" id="endDate"></s:textfield>
               婚礼状态：
-<s:if test="queryActivity.status == 0">
               <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
+                <option value="-1" <s:if test='queryActivity.status=="-1"'>selected</s:if>>全部</option>
+                <option value="0" <s:if test='queryActivity.status=="0"'>selected</s:if>>新创建</option>
+                <option value="1" <s:if test='queryActivity.status=="1"'>selected</s:if>>进行中</option>
+                <option value="2" <s:if test='queryActivity.status=="2"'>selected</s:if>>已结束</option>
               </select>
-</s:if>
-<s:elseif test="queryActivity.status == 1">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:elseif>
-<s:elseif test="queryActivity.status == 2">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2" selected>进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:elseif>
-<s:elseif test="queryActivity.status == 3">
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3" selected>已结束</option>
-              </select>
-</s:elseif>
-<s:else>
-              <select name="queryActivity.status" cssStyle=" width:150px;">
-                <option value="-1">所有状态</option>
-                <option value="2">进行中</option>
-                <option value="3">已结束</option>
-              </select>
-</s:else>
 
               &nbsp;&nbsp;&nbsp;&nbsp;
               <input type="button" value="搜索" class="stdbtn btn_yellow" style="width:80px;" onclick="doSearch()"/>
@@ -147,34 +152,35 @@ function goPage(pageNum)
             <table cellpadding="0" cellspacing="0" border="0" class="stdtable">
               <thead>
                 <tr>
+                  <th class="head0"><input type="checkbox" onclick="selectAll(this)"/>全选&nbsp;&nbsp;<a href="javascript:void(0)"
+                   onclick="delActivity()">删除</a></th>
                   <th class="head0" rowspan="1" colspan="1">婚礼主题</th>
                   <th class="head1" rowspan="1" colspan="1">婚礼地址</th>
                   <th class="head0" rowspan="1" colspan="1">婚礼日期</th>
                   <th class="head1" rowspan="1" colspan="1">婚礼时段</th>
                   <th class="head0" rowspan="1" colspan="1">新郎</th>
                   <th class="head1" rowspan="1" colspan="1">新娘</th>
-                  <th class="head0" rowspan="1" colspan="1">祝福短号</th>
                   <th class="head1" rowspan="1" colspan="1">婚礼状态</th>
                 </tr>
               </thead>
               <tbody>
 
 <s:iterator value="#request.activityList" id="activity">
-
-                        <tr class="gradeX" onclick="showActivity('${activity.id}')">
-                            <td title="${activity.title}">${fn:substring(activity.title,0,21)}</td>
+                        <tr class="gradeX">
+                        	<td title="${activity.title}"><input type="checkbox" name="checkbox" value="${activity.id}"/></td>
+                            <td title="${activity.title}"><a href="javascript:void(0)" onclick="showActivity('${activity.id}')">${fn:substring(activity.title,0,21)}</a></td>
                             <td title="${activity.address}">${fn:substring(activity.address,0,21)}</td>
                             <td align="center">${activity.holdDate}</td>
                             <td>${activity.periodStr}</td>
                             <td align="center">${activity.bridegroom}</td>
                             <td align="center">${activity.bride}</td>
-                            <td align="center">${activity.number}</td>
                             <td align="center">${activity.statusStr}</td>
                         </tr>
 </s:iterator>
 
 <c:forEach begin="1" end="${emptyRow}" step="1">
 					   <tr>
+					   	   <td>&nbsp;</td>
 					       <td>&nbsp;</td>
 					       <td></td>
 					       <td></td>
@@ -215,10 +221,14 @@ function goPage(pageNum)
           
           <br clear="all" />
        婚礼状态说明：<br/>
-      未确认：我们会保存婚礼的所有信息，并等待您的确认，这种状态下，婚礼的所有信息可以随时修改，并且不会产生任何扣费；<br/>
-      已确认：您填写的婚礼信息将不能修改，确认后，我们会在您的账号中扣去相应的服务次数。建议您在临近婚礼举办日期前登录平台确认婚礼信息；<br/>
-      进行中：这场婚礼正在进行中，所有状态无法更改，您正在使用“我爱说”的服务；<br/>
-      已结束：这场婚礼成功使用了“我爱说”的服务。
+     
+
+新创建：这场婚礼已创建成功，婚礼的任何信息可以修改；<br/>
+
+进行中：这场婚礼正在进行中；<br/>
+
+已结束：这场婚礼已成功结束。
+
         </div>
         <!--content--> 
         
