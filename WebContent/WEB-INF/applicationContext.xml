@@ -206,6 +206,7 @@
     <bean id="previewAction" class="com.wmp.preview.action.PreviewAction"
 		scope="prototype">
 		<property name="planService" ref="planService"></property>
+		<property name="smsService" ref="smsService"></property>
 	</bean>
 
     <!--  -->

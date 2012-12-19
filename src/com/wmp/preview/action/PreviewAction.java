@@ -12,6 +12,9 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.wmp.preview.PicSlider;
 import com.wmp.selfService.bean.ActivityInfo;
 import com.wmp.selfService.service.IPlanService;
+import com.wmp.sms.bean.MsgInBox;
+import com.wmp.sms.service.ISmsService;
+import com.wmp.sms.service.ISynSmsService;
 
 public class PreviewAction extends ActionSupport implements SessionAware,
 		ServletRequestAware {
@@ -21,13 +24,18 @@ public class PreviewAction extends ActionSupport implements SessionAware,
 	private ActivityInfo activityInfo;
 	private IPlanService planService;
 	
+	private ISmsService smsService;
+	 
 	private List picList;
+	
+	private List<MsgInBox> msgList;
 	
 	public String picList() throws Exception{
 		String id = request.getParameter("id");
 		activityInfo = this.planService.queryActivityInfo(Integer.parseInt(id));
 		PicSlider slider = new PicSlider();
 		picList = slider.getPicList(activityInfo.getPicPath());
+		msgList = smsService.getLatestSMS(id);
 		return SUCCESS;
 	}
 	
@@ -69,6 +77,30 @@ public class PreviewAction extends ActionSupport implements SessionAware,
 	}
 
 	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
+	}
+
+
+	public ISmsService getSmsService() {
+		return smsService;
+	}
+
+	public void setSmsService(ISmsService smsService) {
+		this.smsService = smsService;
+	}
+
+
+	public List<MsgInBox> getMsgList() {
+		return msgList;
+	}
+
+
+	public void setMsgList(List<MsgInBox> msgList) {
+		this.msgList = msgList;
+	}
+
+
+	public void setRequest(HttpServletRequest request) {
 		this.request = request;
 	}
 

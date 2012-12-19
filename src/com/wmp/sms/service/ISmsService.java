@@ -26,4 +26,6 @@ public interface ISmsService
     public List<UploadPic> queryPicList(String userCode, String activityId);
     
     public Stencil queryStencil(String stencilId) throws Exception;
+    
+    public List<MsgInBox> getLatestSMS(String activityId)throws Exception;
 }

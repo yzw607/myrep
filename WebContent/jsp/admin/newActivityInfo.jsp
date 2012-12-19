@@ -12,6 +12,7 @@ String path = request.getContextPath();
 <title>我爱说 - 用户管理平台</title>
 <link rel="shortcut icon" href="<%=path%>/ico.ico" />
 <link rel="stylesheet" href="<%=path%>/jsp/admin/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<%=path%>/jsp/admin/js/plugins/redmond/jquery-ui-1.8.20.custom.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/dhtmlxcalendar.css"></link>
 <link rel="stylesheet" type="text/css" href="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/skins/dhtmlxcalendar_dhx_skyblue.css"></link>
 <!--[if IE 9]>
@@ -26,11 +27,7 @@ String path = request.getContextPath();
     <link rel="stylesheet" media="screen" href="css/ie7.css"/>
 <![endif]-->
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.flot.min.js"></script>
-<script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery.flot.resize.min.js"></script>
 <script type="text/javascript" src="<%=path%>/jsp/admin/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
-<script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/general.js"></script>
-<script type="text/javascript" src="<%=path%>/jsp/admin/js/custom/dashboard.js"></script>
 <script src="<%=path%>/dhtmlx/dhtmlxCalendar/codebase/dhtmlxcalendar.js"></script>
 <!--[if lt IE 9]>
 	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -116,17 +113,27 @@ function selBG(obj)
     document.getElementById("fileArea").style.display = "none";
   }
 }
-
+var stencil;
 function selStencil()
 {
   var sFeatures="dialogHeight: 700px;dialogWidth:1000px";
-  var stencil = window.showModalDialog("<%=path%>/queryStencil.action", "", sFeatures);
-  if(stencil != null)
-  {
-    document.getElementById("tempStencilName").value = stencil.name;
-    document.getElementById("stencilId").value = stencil.id;
-    document.getElementById("stencilName").value = stencil.name;
-  }
+  
+  var url ="<%=path%>/queryStencil.action";
+  stencil = jQuery('<iframe frameborder="0" id="searchEmployee"/>').dialog({
+      autoOpen: true, 
+      title : "",
+      height: 450, 
+      position: 'center', 
+      width: 700, 
+	  modal :true,
+	  resizable:false, 
+	  bgiframe: true,
+      hide: "highlight",
+      beforeClose: function() {
+           
+      } 
+  }).width("100%").height(700).attr("src",url); 
+ 
 }
 </script>
 

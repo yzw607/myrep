@@ -1,9 +1,14 @@
 package com.wmp.sms.service.impl;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
@@ -219,4 +224,26 @@ public class SmsServiceImpl extends HibernateDaoSupport implements ISmsService
         return (Stencil) this.getHibernateTemplate().get(Stencil.class,
                 Integer.parseInt(stencilId));
     }
+
+	@SuppressWarnings("unchecked")
+	public List<MsgInBox> getLatestSMS(final String activityId) throws Exception {
+		StringBuffer sb = new StringBuffer();
+		sb.append(" from MsgInBox where activityId= ? order by msgArrivedTime desc");
+	    final String hql = sb.toString();
+        final int firstResult = 0;
+        final int maxResults = 5;
+        return getHibernateTemplate().executeFind(new HibernateCallback()
+        {
+            public Object doInHibernate(final Session session)
+                    throws HibernateException, SQLException
+            {
+                final Query query = session.createQuery(hql);
+                query.setString(0, activityId);
+                query.setFirstResult(firstResult);
+                query.setMaxResults(maxResults);
+                final List list = query.list();
+                return list;
+            }
+        });
+	}
 }

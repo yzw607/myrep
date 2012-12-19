@@ -8,7 +8,6 @@ String path = request.getContextPath();
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>我爱说 - 用户管理平台</title>
 <link rel="shortcut icon" href="<%=path%>/ico.ico" />
 <link rel="stylesheet" href="<%=path%>/jsp/admin/css/style.css" />
@@ -21,8 +20,10 @@ function selStencil(id, name)
     name:name
   }
   
-  window.parent.returnValue = stencil;
-  window.parent.close();
+  window.parent.document.getElementById("tempStencilName").value = name;
+  window.parent.document.getElementById("stencilId").value = id;
+  window.parent.document.getElementById("stencilName").value = name;
+  window.parent.stencil.dialog('close');
 }
 </script>
 
@@ -39,17 +40,20 @@ function selStencil(id, name)
 <ul>
   <li>
     <div class="lipic"><img src="<%=path%>/images/stencil/111.jpg" width="155"/></div>
-    <div class="litxt"><a href="javascript:selStencil(1, '普通版本（1024*768）')">普通版本（1024*768）</a></div>
+    <div class="litxt"><a href="javascript:void(0)"
+      onclick="javascript:selStencil(1, '普通版本（1024*768）')">普通版本（1024*768）</a></div>
   </li>
   
   <li>
     <div class="lipic"><img src="<%=path%>/images/stencil/222.jpg" width="155"/></div>
-    <div class="litxt"><a href="javascript:selStencil(2, '宽屏版本（16:10）')">宽屏版本（16:10）</a></div>
+    <div class="litxt"><a href="javascript:void(0)"
+      onclick="javascript:selStencil(2, '宽屏版本（16:10）')">宽屏版本（16:10）</a></div>
   </li>  
   
   <li>
     <div class="lipic"><img src="<%=path%>/images/stencil/222.jpg" width="155"/></div>
-    <div class="litxt"><a href="javascript:selStencil(3, '普通版本-图片联动（1024*768）')">普通版本-图片联动（1024*768）</a></div>
+    <div class="litxt"><a href="javascript:void(0)"
+     onclick="javascript:selStencil(3, '普通版本-图片联动（1024*768）')">普通版本-图片联动（1024*768）</a></div>
   </li>
 </ul>
 </div>
