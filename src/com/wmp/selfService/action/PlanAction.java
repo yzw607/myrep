@@ -14,6 +14,7 @@ import com.wmp.common.Common;
 import com.wmp.common.bean.Page;
 import com.wmp.selfService.bean.ActivityInfo;
 import com.wmp.selfService.bean.UserNumber;
+import com.wmp.selfService.service.INumberService;
 import com.wmp.selfService.service.IPlanService;
 import com.wmp.userManage.bean.User;
 
@@ -21,6 +22,7 @@ import com.wmp.userManage.bean.User;
 public class PlanAction extends ActionSupport implements SessionAware, ServletRequestAware
 {
     private IPlanService planService;
+    private INumberService numberService;
     private String sysMsg;
     private Map<String, Object> session;
     private HttpServletRequest request;
@@ -81,6 +83,9 @@ public class PlanAction extends ActionSupport implements SessionAware, ServletRe
                 file, contextPath);
 
         numberList = this.planService.queryUserNumbers(user.getUserCode());
+        String numberId = request.getParameter("userNumberId");
+        numberId = (numberId==null || "".equals(numberId))?"0":numberId;
+        numberService.updateUserNumber(numberId,activityInfo.getNumber());
         this.sysMsg = "保存成功！";
         return SUCCESS;
     }
@@ -365,4 +370,12 @@ public class PlanAction extends ActionSupport implements SessionAware, ServletRe
     {
         this.request = request;
     }
+
+	public INumberService getNumberService() {
+		return numberService;
+	}
+
+	public void setNumberService(INumberService numberService) {
+		this.numberService = numberService;
+	}
 }

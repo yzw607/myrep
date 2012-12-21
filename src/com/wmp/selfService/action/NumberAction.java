@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.apache.struts2.json.annotations.JSON;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.wmp.common.Common;
@@ -35,10 +36,16 @@ public class NumberAction extends ActionSupport implements SessionAware,
     private Map<String, Object> session;
     HttpServletRequest request;
     HttpServletResponse response;
-
+    
+    
+    private List<UserNumber> hasChooseList;
+    private List<UserNumber> notSelectList;
+    
+    private int num;
+    
     public String queryUserNumber() throws Exception
     {
-        User user = (User) session.get(Common.USERINFO);
+        /*User user = (User) session.get(Common.USERINFO);
         
 //        if(user.getNumberLimit() > 0)
 //        {
@@ -96,7 +103,11 @@ public class NumberAction extends ActionSupport implements SessionAware,
         sb.append("javascript:refreshPage()\">刷新<img src=\"").append(path).append("/images/help12.png \"/></a>本页面随机刷新祝福短号。");
         this.numberInfo = sb.toString();
         
-        menuType = "userNumber";
+        menuType = "userNumber";*/
+    	
+    	//NUMBER_TYPE =1 表示未选中，2表示已选中
+    	notSelectList = this.numberService.queryIdleNumber("1");
+    	hasChooseList = this.numberService.queryIdleNumber("2");
         
         return SUCCESS;
     }
@@ -137,11 +148,12 @@ public class NumberAction extends ActionSupport implements SessionAware,
         return null;
     }
 
-    public INumberService getNumberService()
-    {
-        return numberService;
+    public String checkNumber() throws Exception{
+    	String number = request.getParameter("number");
+    	num = this.numberService.checkNum(number);
+    	return SUCCESS;  
     }
-
+    
     public void setNumberService(INumberService numberService)
     {
         this.numberService = numberService;
@@ -251,4 +263,29 @@ public class NumberAction extends ActionSupport implements SessionAware,
     {
         this.numberInfo = numberInfo;
     }
+
+	public List<UserNumber> getHasChooseList() {
+		return hasChooseList;
+	}
+
+	public void setHasChooseList(List<UserNumber> hasChooseList) {
+		this.hasChooseList = hasChooseList;
+	}
+
+	public List<UserNumber> getNotSelectList() {
+		return notSelectList;
+	}
+
+	public void setNotSelectList(List<UserNumber> notSelectList) {
+		this.notSelectList = notSelectList;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
 }

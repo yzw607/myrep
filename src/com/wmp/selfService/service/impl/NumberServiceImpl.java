@@ -62,7 +62,7 @@ public class NumberServiceImpl extends HibernateDaoSupport implements INumberSer
     @SuppressWarnings("unchecked")
     public List<UserNumber> queryIdleNumber(String numberType)
     {
-        final String hql = "FROM UserNumber o WHERE o.userCode is null and o.numberType = '" + numberType + "' ORDER BY RAND() ";
+        final String hql = "FROM UserNumber o WHERE o.numberType = '" + numberType + "' ORDER BY RAND() ";
         final int firstResult = 0;
         List list = null;
         
@@ -234,4 +234,37 @@ public class NumberServiceImpl extends HibernateDaoSupport implements INumberSer
     {
         return (User)this.getHibernateTemplate().get(User.class, userId);
     }
+
+	@Override
+	public int checkNum(String number) throws Exception {
+	    String hql = "FROM UserNumber o WHERE o.number = ? and o.numberType=?";
+	    List<UserNumber> numberList = this.getHibernateTemplate().find(hql, new Object[]{number,"2"});
+	    if(numberList!=null){
+	    	return numberList.size();
+	    }
+	           
+		return 0;
+	}
+
+	@Override
+	public void updateUserNumber(String numberId,String number) throws Exception {
+		UserNumber userNumber = (UserNumber)this.getHibernateTemplate().get(UserNumber.class, Integer.parseInt(numberId));
+		if(userNumber == null){
+			String hql = "FROM UserNumber o WHERE o.number = ? and o.numberType=?";
+		    List<UserNumber> numberList = this.getHibernateTemplate().find(hql, new Object[]{number,"1"});
+		    if(numberList!=null){
+		    	userNumber = numberList.get(0);
+		    	userNumber.setNumberType("2");
+				this.getHibernateTemplate().update(userNumber);		
+		    }else{
+		    	userNumber = new UserNumber();
+		    	userNumber.setNumber(number);
+		    	userNumber.setNumberType("2");
+		    	this.getHibernateTemplate().persist(userNumber);
+		    }
+		}else{
+			userNumber.setNumberType("2");
+			this.getHibernateTemplate().update(userNumber);		
+		}
+	}
 }

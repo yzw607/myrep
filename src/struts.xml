@@ -368,4 +368,14 @@
 			<result name="error">/prompterr.jsp</result>
 		</action>
 	</package>
+	
+	<package name="json" extends="json-default">
+		<action name="checkNumber" class="numberAction" method="checkNumber">
+			<result type="json">  
+				<param name="root">
+					   num
+			   </param>
+            </result>  
+		</action>
+	</package>
 </struts>

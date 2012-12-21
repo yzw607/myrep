@@ -116,14 +116,12 @@ function selBG(obj)
 var stencil;
 function selStencil()
 {
-  var sFeatures="dialogHeight: 700px;dialogWidth:1000px";
-  
   var url ="<%=path%>/queryStencil.action";
-  stencil = jQuery('<iframe frameborder="0" id="searchEmployee"/>').dialog({
+  stencil = jQuery('<iframe frameborder="0" id="selStencil"/>').dialog({
       autoOpen: true, 
-      title : "",
-      height: 450, 
-      position: 'center', 
+      title : "婚礼模板选择",
+      height: 200, 
+      position: 'top', 
       width: 700, 
 	  modal :true,
 	  resizable:false, 
@@ -132,8 +130,41 @@ function selStencil()
       beforeClose: function() {
            
       } 
-  }).width("100%").height(700).attr("src",url); 
+  }).width("100%").height(360).attr("src",url); 
  
+}
+var numDialog
+function chooseNum(){
+	var url ='<%=path%>/queryNumber.action';
+	numDialog = jQuery('<iframe frameborder="0" id="numDialog"/>').dialog({
+	      autoOpen: true, 
+	      title : "活动短号选择",
+	      height: 200, 
+	      position: 'top', 
+	      width: 700, 
+		  modal :true,
+		  resizable:false, 
+		  bgiframe: true,
+	      hide: "highlight",
+	      beforeClose: function() {
+	           
+	      } 
+	  }).width("100%").height(360).attr("src",url); 
+}
+//检查短号的唯一性
+function checkNumber(){
+	$.ajax({
+	  type: 'POST',
+	  url: "<%=path%>/checkNumber.action",
+	  data: "number="+$("#number").val(),
+	  success: function(data){
+		  if(data==1){
+			  alert("该活动短号已经被其他活动选中");
+			  return ;
+		  }
+	  },
+	  dataType: "json"
+	});
 }
 </script>
 
@@ -168,8 +199,10 @@ function selStencil()
     <td><input type="text" name="activityInfo.holdDate" id="holdDate" value="<s:date name="activityInfo.holdDate" format="yyyy-MM-dd"/>" readonly /></td>
     <td>活动短号：</td>
     <td>
-    <s:textfield name="activityInfo.number" id="number"  maxLength="10" readOnly="readOnly"/>
-     <input type="button" value="祝福短号选择" class="stdbtn btn_yellow" style="width:100px; height:35px;" onclick="window.location.href='<%=path%>/queryNumber.action'"/>
+    <s:textfield name="activityInfo.number" id="number"  maxLength="3" onblur="checkNumber()"/>
+     <input type="button" value="祝福短号选择" class="stdbtn btn_yellow" style="width:100px; height:35px;" 
+     onclick="chooseNum()"/>
+     <input type="hidden" name="userNumberId" id="userNumberId"/>
     </td>
   </tr>
 <%--   <tr>

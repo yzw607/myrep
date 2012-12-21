@@ -31,10 +31,6 @@ function selStencil(id, name)
 
 <body class="loggedin" >
     
-<div class="contenttitle radiusbottom0" style="margin:10px;">
-  <h2 class="table"><span>婚礼模版选择</span></h2>
-</div>
-
 
 <div class="newli">
 <ul>
@@ -60,7 +56,7 @@ function selStencil(id, name)
 
 首页 上一页 下一页 尾页
 
-<input type="button" value="关闭" onclick="javacsript:window.close()"/>
+<input type="button" value="关闭" onclick="javacsript: window.parent.stencil.dialog('close');"/>
 
 <br/>
 

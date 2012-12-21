@@ -201,6 +201,7 @@
 	<bean id="planAction" class="com.wmp.selfService.action.PlanAction"
 		scope="prototype">
 		<property name="planService" ref="planService"></property>
+		<property name="numberService" ref="numberService"></property>
 	</bean>
 	
     <bean id="previewAction" class="com.wmp.preview.action.PreviewAction"

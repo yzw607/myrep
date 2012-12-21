@@ -19,4 +19,9 @@ public interface INumberService
     public List<UserNumber> queryIdleNumber(String numberType);
     
     public User getNewestUser(int userId) throws Exception;
+    
+    public int checkNum(String number) throws Exception;
+    
+    public void updateUserNumber(String numberId,String number) throws Exception;
+    
 }
