@@ -56,6 +56,10 @@ function doSave()
     }
   }*/
   
+  
+  
+  
+  
   if(document.getElementById("title").value == "")
   {
     alert("请输入活动主题！");
