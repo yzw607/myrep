@@ -1,5 +1,6 @@
 package com.wmp.preview.action;
 
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ import com.wmp.selfService.bean.ActivityInfo;
 import com.wmp.selfService.service.IPlanService;
 import com.wmp.sms.bean.MsgInBox;
 import com.wmp.sms.service.ISmsService;
-import com.wmp.sms.service.ISynSmsService;
+import com.wmp.util.ImageUtil;
 
 public class PreviewAction extends ActionSupport implements SessionAware,
 		ServletRequestAware {
@@ -30,15 +31,29 @@ public class PreviewAction extends ActionSupport implements SessionAware,
 	
 	private List<MsgInBox> msgList;
 	
-	public String picList() throws Exception{
+	private ByteArrayInputStream imageStream;
+	
+	public String preview() throws Exception{
 		String id = request.getParameter("id");
 		activityInfo = this.planService.queryActivityInfo(Integer.parseInt(id));
 		PicSlider slider = new PicSlider();
 		picList = slider.getPicList(activityInfo.getPicPath());
+		
+		return SUCCESS;
+	}
+	
+	public String getSnsList() throws Exception{
+		String id = request.getParameter("id");
 		msgList = smsService.getLatestSMS(id);
 		return SUCCESS;
 	}
 	
+	public String getPic() throws Exception {
+		String path = request.getParameter("path");
+		ImageUtil imageUtil = new ImageUtil();
+        imageStream = imageUtil.getStream(path);
+        return SUCCESS;
+    }
 
 	public List getPicList() {
 		return picList;
@@ -56,10 +71,6 @@ public class PreviewAction extends ActionSupport implements SessionAware,
 		this.activityInfo = activityInfo;
 	}
 
-	public IPlanService getPlanService() {
-		return planService;
-	}
-
 	public void setPlanService(IPlanService planService) {
 		this.planService = planService;
 	}
@@ -72,18 +83,10 @@ public class PreviewAction extends ActionSupport implements SessionAware,
 		this.session = session;
 	}
 
-	public HttpServletRequest getRequest() {
-		return request;
-	}
-
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 	}
 
-
-	public ISmsService getSmsService() {
-		return smsService;
-	}
 
 	public void setSmsService(ISmsService smsService) {
 		this.smsService = smsService;
@@ -104,4 +107,11 @@ public class PreviewAction extends ActionSupport implements SessionAware,
 		this.request = request;
 	}
 
+	public ByteArrayInputStream getImageStream() {
+	    return imageStream;
+    }
+
+    public void setImageStream(ByteArrayInputStream imageStream) {
+        this.imageStream = imageStream;
+    }
 }

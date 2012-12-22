@@ -38,7 +38,7 @@ String path = request.getContextPath();
 <script>
 function showActivity(id)
 {
-  window.location.href = "<%=path%>/picslider.action?id=" + id;
+  window.location.href = "<%=path%>/preview.action?id=" + id;
 }
 
 function doSearch()

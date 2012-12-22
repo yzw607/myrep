@@ -351,8 +351,15 @@
 	<!-- Added By yang -->
 	
 	<package name="preview" extends="struts-default">
-		<action name="picslider" class="previewAction" method="picList">
-			<result name="success">/jsp/admin/picslider.jsp</result>
+		<action name="preview" class="previewAction" method="preview">
+			<result name="success">/customSms.jsp</result>
+		</action>
+		<action name="getPic" class="previewAction" method="getPic">
+			 <result name="success" type="stream">  
+               <param name="contentType">application/octet-stream</param>  
+               <param name="inputName">imageStream</param>  
+               <param name="bufferSize">1024</param>  
+           </result>
 		</action>
 	</package>
 	
@@ -369,11 +376,19 @@
 		</action>
 	</package>
 	
-	<package name="json" extends="json-default">
+	<package name="json" extends="json-default" namespace="/">
 		<action name="checkNumber" class="numberAction" method="checkNumber">
 			<result type="json">  
 				<param name="root">
 					   num
+			   </param>
+            </result>  
+		</action>
+		
+		<action name="getSnsList" class="previewAction" method="getSnsList">
+			<result type="json">  
+				<param name="root">
+					   msgList
 			   </param>
             </result>  
 		</action>

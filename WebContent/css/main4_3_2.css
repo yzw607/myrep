@@ -1,7 +1,7 @@
 * {
 	padding:0;
 	margin:0;
-	font-family:"宋体";
+	font-family:"å®‹ä½“";
 }
 
 
@@ -94,7 +94,7 @@ li {
 .copyright {
 	width:980;
 	text-align:center;
-	font-family:"微软雅黑";
+	font-family:"å¾®è½¯é›…é»‘";
 	font-size:24px;
 	margin:0 auto;
 	margin-top:15px;
@@ -379,7 +379,7 @@ body.js .demo_slide {
 {
 	margin:25px 0 0 220px;
 	line-height:40px;
-	font-family:"微软雅黑";
+	font-family:"å¾®è½¯é›…é»‘";
 	color:#FF0000;
 }
 
@@ -410,7 +410,7 @@ body.js .demo_slide {
 	width:800px;
 	font-size:38px;
 	text-align:center;
-	font-family:"微软雅黑";
+	font-family:"å¾®è½¯é›…é»‘";
 	font-weight:normal;
 }
 
@@ -420,7 +420,7 @@ body.js .demo_slide {
 	line-height:65px;
 	width:720px;
 	font-size:30px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	font-weight:normal;
 }
 
@@ -440,7 +440,7 @@ body.js .demo_slide {
 	text-align:center;
 	line-height:60px;
 	font-size:50px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	margin-top:50px;
 	color:#FF0000
 }
@@ -450,7 +450,7 @@ body.js .demo_slide {
 	text-align:center;
 	line-height:60px;
 	font-size:50px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	margin-top:20px;
 }
 
@@ -470,7 +470,7 @@ body.js .demo_slide {
 	text-align:center;
 	line-height:130px;
 	font-size:50px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 }
 
 .showq table
@@ -539,7 +539,7 @@ body.js .demo_slide {
 {
 	text-align:left;
 	font-size:14px;
-	font-family:"宋体";
+	font-family:"å®‹ä½“";
 	line-height:20px;
 	margin:10 0 10 10;
 	height:60px;
@@ -551,7 +551,7 @@ body.js .demo_slide {
 	height:20px;
 	line-height:20px;
 	font-size:14px;
-	font-family:"宋体";
+	font-family:"å®‹ä½“";
 	line-height:20px;
 	margin:5px;
 }
@@ -739,7 +739,6 @@ a:hover { text-decoration:none; }
 }
 
 #bigPic{
-	height:2953px;
 	width:462px;
 }
 #bigPic img{
@@ -863,14 +862,14 @@ a:hover { text-decoration:none; }
 	font-size:22px;
 	font-style:italic;
 	color:#d21e2a;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	font-weight:bold;
 	margin:5px 0 0 15px;
 }
 
 .smsmain p
 {
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	font-weight:bold;
 	color:#333333;
 	width:475px;
@@ -900,7 +899,7 @@ a:hover { text-decoration:none; }
 	line-height:38px;
 	text-align:center;
 	font-weight:bold;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	color:#a41111;
 	font-size:22px;
 	background:url(../images/sms/smsbottom.png) no-repeat center;
@@ -984,7 +983,7 @@ a:hover { text-decoration:none; }
 	width:700px;
 	float:left;
 	line-height:50px;
-	font:"华文中宋";
+	font:"å�Žæ–‡ä¸­å®‹";
 	font-size:50px;
 	font-weight:bold;
 	margin-top:60px;
@@ -1020,7 +1019,7 @@ a:hover { text-decoration:none; }
 {
 	background:#ddd;
 	color:#003399;
-	font:"微软雅黑";
+	font:"å¾®è½¯é›…é»‘";
 	font-size:18px;
 	font-weight:bold;
 	height:40px;
@@ -1078,7 +1077,7 @@ a:hover { text-decoration:none; }
 	width:700px;
 	line-height:40px;
 	font-size:35px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	text-align:center;
 	margin-top:60px;
 	color:#111;
@@ -1092,7 +1091,7 @@ a:hover { text-decoration:none; }
 	width:700px;
 	line-height:40px;
 	font-size:40px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	text-align:center;
 	margin-top:60px;
 	color:#6F0000;
@@ -1113,7 +1112,7 @@ a:hover { text-decoration:none; }
 	height:80px;
 	line-height:40px;
 	font-size:40px;
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	text-align:center;
 	margin-top:10px;
 	color:#111;
@@ -1131,7 +1130,7 @@ a:hover { text-decoration:none; }
 	height:40px;
 	font-style:italic;
 	color:#d21e2a;
-	font-family:"微软雅黑";
+	font-family:"å¾®è½¯é›…é»‘";
 	font-weight:bold;
 	margin:60px 0 0 20px;
 }
@@ -1230,7 +1229,7 @@ a:hover { text-decoration:none; }
 	font-size:35px;
 	font-style:italic;
 	color:#fff;
-	font-family:"微软雅黑";
+	font-family:"å¾®è½¯é›…é»‘";
 	font-weight:bold;
 	position:absolute;
 	left:30px;
@@ -1239,7 +1238,7 @@ a:hover { text-decoration:none; }
 
 .mainlist p
 {
-	font-family:"华文中宋";
+	font-family:"å�Žæ–‡ä¸­å®‹";
 	line-height:40px;
 	font-weight:bold;
 	color:#333333;

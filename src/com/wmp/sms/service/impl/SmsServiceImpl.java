@@ -231,7 +231,7 @@ public class SmsServiceImpl extends HibernateDaoSupport implements ISmsService
 		sb.append(" from MsgInBox where activityId= ? order by msgArrivedTime desc");
 	    final String hql = sb.toString();
         final int firstResult = 0;
-        final int maxResults = 5;
+        final int maxResults = 4;
         return getHibernateTemplate().executeFind(new HibernateCallback()
         {
             public Object doInHibernate(final Session session)

@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <%
 String path = request.getContextPath();
+String id = request.getParameter("id");
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -14,11 +15,14 @@ String path = request.getContextPath();
 <script type="text/javascript" src="<%=path%>/scripts/jquery-1.7.2.min.js"></script>
 <script language="javascript">
 setInterval(test, 6000);
+
 var i = 1;
-var sender;
+var sender="";
+ 
+
 function test()
 {
-  var uu = document.getElementById("smsLi");
+  var uu = document.getElementById("smsLi"); 
   var t = uu.childNodes.length;
   if(t >= 6)
   {
@@ -28,43 +32,54 @@ function test()
   var li= document.createElement("li");
   li.style.display = "none";
           
-  var smsStr = "祝贺${activityInfo.bridegroom}、${activityInfo.bride}新婚快乐，百年好合！";
+  var smsStr = "祝贺新婚快乐，百年好合！";
   li.className = "threeline nopic";
+ 
+  $.ajax({
+	  type: 'POST',
+	  url: "<%=path%>/getSnsList.action",
+	  data: "id=${activityInfo.id}",
+	  success: function(data){
+		  if(i % 4 == 0)
+		  {
+		    sender = data[0].sender;
+		    smsStr = data[0].msgTitle;
+		  }
+		  else if(i % 4 == 1)
+		  {
+			  sender = data[1].sender;
+			  smsStr = data[1].msgTitle;
+		  }
+		  else if(i % 4 == 2)
+		  {
+			  sender = data[2].sender;
+			   smsStr = data[2].msgTitle;
+		  }
+		  else if(i % 4 == 3)
+		  {
+			  sender = data[3].sender;
+			  smsStr = data[3].msgTitle;
+		  }
+		  i++;
           
-  if(i % 4 == 0)
-  {
-    sender = "二哥";
-    smsStr = "弟，你媳妇儿不错啊，你一定要好好珍惜";
-  }
-  else if(i % 4 == 1)
-  {
-    sender = "奶奶";
-    smsStr = "宝贝孙女，一定要让奶奶早点抱重孙啊！";
-  }
-  else if(i % 4 == 2)
-  {
-    sender = "贝贝";
-    smsStr = "祝贺好姐妹终于找到如意郎君！";
-  }
-  else if(i % 4 == 3)
-  {
-    sender = "妈妈";
-    smsStr = "祝我宝贝女儿新婚快乐，百年好合！";
-  }
-  i++;
-            
-  li.innerHTML = "<h3>" + sender + "：</h3><p>" + smsStr + "</p>";
-  uu.appendChild(li);
-        
-  var $ul = $("#con ul");
-  var liHeight = $ul.find("li:last").height();
+		  li.innerHTML = "<h3>" + sender + "：</h3><p>" + smsStr + "</p>";
+		  uu.appendChild(li);
+		        
+		  var $ul = $("#con ul");
+		  var liHeight = $ul.find("li:last").height();
 
-  $ul.animate({marginTop : liHeight+7 +"px"},1000,function(){
-  $ul.find("li:last").prependTo($ul)
-  $ul.find("li:first").hide();
-  $ul.css({marginTop:0});
-  $ul.find("li:first").fadeIn(1000);
+		  $ul.animate({marginTop : liHeight+7 +"px"},1000,function(){
+		  $ul.find("li:last").prependTo($ul)
+		  $ul.find("li:first").hide();
+		  $ul.css({marginTop:0});
+		  $ul.find("li:first").fadeIn(1000);
+		  });
+	  },
+	  dataType: "json"
   });
+  
+  
+
 }
 
 function activatePic(index, obj)
@@ -101,14 +116,14 @@ function bgPic(index, obj)
 </script>
 </head>
 
-<body style="overflow: hidden">
+<body>
 
 <div class="page" 
 <s:if test="activityInfo.bgPicPath != null && activityInfo.bgPicPath != ''">
 style="background:url(${activityInfo.bgPicPath}); "
 </s:if>
 <s:else>
-style="background:url(<%=path%>/images/bg/bg7.jpg); "
+style="background:url(<%=path%>/images/bg/bg7.jpg);"
 </s:else>
 >
 
@@ -143,11 +158,9 @@ style="background:url(<%=path%>/images/bg/bg7.jpg); "
     </div>
     <div class="pic1024">
         <div id="bigPic"> 
-          <img src="<%=path%>/images/4_3_2/gundong/1.jpg" />
-          <img src="<%=path%>/images/4_3pic/2.jpg" />
-          <img src="<%=path%>/images/4_3pic/3.jpg" />
-          <img src="<%=path%>/images/4_3pic/4.jpg" />
-          <img src="<%=path%>/images/4_3pic/5.jpg" />
+         <s:iterator value="#request.picList" id="pic">
+          <img src="<%=path%>/getPic.action?path=${pic}"/>
+         </s:iterator>
         </div>
       </div>
     <div class="happy"></div>
@@ -177,7 +190,6 @@ style="background:url(<%=path%>/images/bg/bg7.jpg); "
     <div class="smsbottom">
       婚礼呈现：我爱说&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 联系电话：400-101-4595
     </div>
-
 </div>
 
 
@@ -187,14 +199,14 @@ style="background:url(<%=path%>/images/bg/bg7.jpg); "
     var interval;
     function showImage(index){
         if(index < $('#bigPic img').length){
-        	var indexImage = $('#bigPic img')[index]
+        	var indexImage = $('#bigPic img')[index];
             if(currentImage){   
             	if(currentImage != indexImage ){
                     $(currentImage).css('z-index',2);
                     clearTimeout(myTimer);
                     $(currentImage).fadeOut(250, function() {
 					    myTimer = setTimeout("showNext()", 7000);
-					    $(this).css({'display':'none','z-index':1})
+					    $(this).css({'display':'none','z-index':1});
 					});
                 }
             }
@@ -221,6 +233,8 @@ style="background:url(<%=path%>/images/bg/bg7.jpg); "
         	var count = $(this).attr('rel');
         	showImage(parseInt(count)-1);
         });
+		
+        //test();
 	});
 </script>
 </body>
